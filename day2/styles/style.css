@@ -57,7 +57,7 @@ body{
     background-color: #fff;
     color: hsl(224, 10%, 45%);
     padding: 20px;
-    margin-top: 15px;
+    margin: 15px;
     cursor: pointer;
 }
 
