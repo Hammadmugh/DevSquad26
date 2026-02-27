@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body>
+    <header
+      class="relative min-h-screen bg-[url('/public/destinationsHeroSectionImg.png')] bg-cover bg-center"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent to-black z-10"
+      ></div>
+      <nav class="flex justify-between relative z-20">
+        <img
+          src="/public/icon.png"
+          class="mt-[80px] ml-[91px]"
+          alt="icon"
+          width="213px"
+          height="118px"
+        />
+        <ul
+          class="flex justify-between gap-[55px] mt-[87px] mr-[186px] text-white items-center"
+          >
+          <li>
+            <button id="themeToggle" class="relative inline-flex items-center w-14 h-8 rounded-full border border-white bg-black transition-colors duration-300" aria-label="Toggle theme">
+              <!-- Sliding background -->
+              <div id="toggleBg" class="absolute left-0 w-7 h-7 bg-white rounded-full transition-transform duration-300 transform"></div>
+              <!-- Icons -->
+              <div class="relative flex items-center justify-center w-7 h-7 ml-0.5 z-10">
+                <svg id="sunIcon" class="w-4 h-4 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.536l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.121-10.121a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm5.657-9.193a1 1 0 00-1.414 0l-.707.707A1 1 0 005.05 6.464l.707-.707a1 1 0 011.414-1.414zM5 11a1 1 0 100-2H4a1 1 0 100 2h1z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div class="relative flex items-center justify-center w-7 h-7 mr-0.5 z-10">
+                <svg id="moonIcon" class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+              </div>
+            </button>
+          </li>
+          <li><a href="/dist/destinations.html" class="hover:text-gray-300 transition">Destinations</a></li>
+          <li><a href="#members" class="hover:text-gray-300 transition">Members</a></li>
+          <li><a href="#gallery" class="hover:text-gray-300 transition">Gallory</a></li>
+        </ul>
+      </nav>
+      <section
+        class="flex flex-col justify-center items-center text-center mx-auto max-w-xl px-8 md:px-16 py-20 text-white relative z-10"
+      >
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          Explore Saudi Arabia
+        </h1>
+        <p class="text-lg md:text-xl text-white/90">
+          Saudi Arabia is rich in heritage and history. The country is home to
+          hundreds of historically important sites.
+        </p>
+      </section>
+      <section class="flex justify-between items-center text-white px-[77px] relative z-30">
+        <div>
+          <h3 class="font-medium text-[32px]">History and Heritage</h3>
+          <p class="font-normal text-[16px]">
+            Saudi Arabia has long occupied an <br />
+            important role at the center of the <br />
+            islamic and Arab worlds. Located at <br />
+            the heart of three continents.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-medium text-[32px]">People and Culture</h3>
+          <p class="font-normal text-[16px]">
+            Saudi Arabia has a rich Culture <br />
+            Shaped by the diversity of its people. <br />
+            which has formed the basis of its <br />
+            cultural identity.
+          </p>
+        </div>
+      </section>
+    </header>
+    <section class="bg-black">
+      <section class="py-[84px] pr-[78px] pl-[107px] flex justify-between">
+        <img
+          src="/public/companyLogo1.png"
+          alt="logo1"
+          width="290px"
+          height="88px"
+        />
+        <img
+          src="/public/companyLogo2.png"
+          alt="logo1"
+          width="340px"
+          height="121px"
+        />
+        <img
+          src="/public/companyLogo3.png"
+          alt="logo1"
+          width="230px"
+          height="115px"
+        />
+        <img
+          src="/public/companyLogo4.png"
+          alt="logo1"
+          width="254px"
+          height="118px"
+        />
+      </section>
+      <section
+        class="flex flex-col justify-center items-center text-center text-white"
+      >
+        <h3 class="font-medium text-[40px]">Best Destinations</h3>
+        <p class="font-normal text-[20px]">
+          Explore the enchanting landscapes of saudi Arabia, from <br />
+          the breathtaking deserts to the stunning coastal shores.
+        </p>
+      </section>
+      <section
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 px-6 md:px-[54px] pt-[66px] md:pb-[174px] pb-20"
+      >
+        <section
+          class="break-inside-avoid relative h-[672px] bg-[url('/public/destination1.png')] rounded-4xl overflow-hidden bg-cover bg-center"
+        >
+          <!-- Top Content -->
+          <div class="p-6">
+            <h3 class="font-medium text-4xl text-white mb-2">
+              Hisma Desert
+            </h3>
+            <p class="font-normal text-lg text-white/90">
+              The hisma desert is a true marvel of <br>
+nature, and several desert oasis.
+            </p>
+          </div>
+
+          <!-- Traveler Info at bottom-left -->
+          <div class="absolute bottom-6 left-6 flex items-center gap-3">
+            <img
+              src="/public/traveler1.png"
+              class="rounded-full w-20 h-20 object-cover"
+              alt="traveler1"
+            />
+            <div class="text-white">
+              <p class="font-medium">Wazeem Al Mulk</p>
+              <p class="text-sm">Traveler</p>
+            </div>
+          </div>
+        </section>
+        <section
+          class="break-inside-avoid relative h-[417px] bg-[url('/public/destination2.png')] rounded-4xl overflow-hidden bg-cover bg-center"
+        >
+          <!-- Top Content -->
+          <div class="p-6">
+            <h3 class="font-medium text-4xl text-white mb-2">
+              Kafd World Trade <br>
+Centre, Riyadh.
+            </h3>
+            <p class="font-normal text-lg text-white/90">
+             The Towering Structure stands as a <br>
+testament to Saudi Arabia’s vision for <br>
+a thriving business hub.
+            </p>
+          </div>
+
+          <!-- Traveler Info at bottom-left -->
+          <div class="absolute bottom-6 left-6 flex items-center gap-3">
+            <img
+              src="/public/traveler2.png"
+              class="rounded-full w-20 h-20 object-cover"
+              alt="traveler1"
+            />
+            <div class="text-white">
+              <p class="font-medium">Benjamin Voros</p>
+              <p class="text-sm">Traveler</p>
+            </div>
+          </div>
+        </section>
+        <section
+          class="break-inside-avoid relative h-[672px] bg-[url('/public/destination3.png')] rounded-4xl overflow-hidden bg-cover bg-center"
+        >
+          <!-- Top Content -->
+          <div class="p-6">
+            <h3 class="font-medium text-4xl text-white mb-2">
+              Al Qarah Mountain
+            </h3>
+            <p class="font-normal text-lg text-white/90">
+              The Mountain’s distractive rocks <br>
+formations inviting adventures to <br>
+explore its hidden treasure.
+            </p>
+          </div>
+
+          <!-- Traveler Info at bottom-left -->
+          <div class="absolute bottom-6 left-6 flex items-center gap-3">
+            <img
+              src="/public/traveler3.png"
+              class="rounded-full w-20 h-20 object-cover"
+              alt="traveler1"
+            />
+            <div class="text-white">
+              <p class="font-medium">John Towner</p>
+              <p class="text-sm">Traveler</p>
+            </div>
+          </div>
+        </section>
+        <section
+          class="break-inside-avoid relative h-[420px] bg-[url('/public/destination4.png')] rounded-4xl overflow-hidden bg-cover bg-center"
+        >
+          <!-- Top Content -->
+          <div class="p-6">
+            <h3 class="font-medium text-4xl text-white mb-2">
+              The best of Tabuk
+            </h3>
+            <p class="font-normal text-lg text-white/90">
+              Tabuk also spelled Tabouk, the capital city of the <br> 
+Tabuk Region in northwestern Saudi Arabia.
+            </p>
+          </div>
+
+          <!-- Traveler Info at bottom-left -->
+          <div class="absolute bottom-6 left-6 flex items-center gap-3">
+            <img
+              src="/public/traveler4.png"
+              class="rounded-full w-20 h-20 object-cover"
+              alt="traveler1"
+            />
+            <div class="text-white">
+              <p class="font-medium">Jonatan Pie</p>
+              <p class="text-sm">Traveler</p>
+            </div>
+          </div>
+        </section>
+        <section
+          class="break-inside-avoid relative h-[670px] bg-[url('/public/destination5.png')] md:-mt-[255px] rounded-4xl overflow-hidden bg-cover bg-center"
+        >
+          <!-- Top Content -->
+          <div class="p-6">
+            <h3 class="font-medium text-4xl text-white mb-2">
+              AlUIa
+            </h3>
+            <p class="font-normal text-lg text-white/90">
+              AIUIa is located deep in the desert in <br>
+the northwest of Saudi Arabia
+            </p>
+          </div>
+
+          <!-- Traveler Info at bottom-left -->
+          <div class="absolute bottom-6 left-6 flex items-center gap-3">
+            <img
+              src="/public/traveler5.png"
+              class="rounded-full w-20 h-20 object-cover"
+              alt="traveler1"
+            />
+            <div class="text-white">
+              <p class="font-medium">garrett parker</p>
+              <p class="text-sm">Traveler</p>
+            </div>
+          </div>
+        </section>
+        <section
+          class="break-inside-avoid relative h-[409px] bg-[url('/public/destination6.png')] rounded-4xl overflow-hidden bg-cover bg-center"
+        >
+          <!-- Top Content -->
+          <div class="p-6">
+            <h3 class="font-medium text-4xl text-white mb-2">
+              The best things <br>
+To do in Taif
+            </h3>
+            <p class="font-normal text-lg text-white/90">
+              Taif is a city and governorate in the Makkah <br>
+ Region of Saudi Arabia.
+            </p>
+          </div>
+
+          <!-- Traveler Info at bottom-left -->
+          <div class="absolute bottom-6 left-6 flex items-center gap-3">
+            <img
+              src="/public/traveler6.png"
+              class="rounded-full w-20 h-20 object-cover"
+              alt="traveler1"
+            />
+            <div class="text-white">
+              <p class="font-medium">Cristina Gottardi</p>
+              <p class="text-sm">Traveler</p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </section>
+    <!-- WhatsApp Contact Section -->
+    <section class="bg-black w-full text-white pb-16 md:pb-24">
+      <div class="max-w-[1400px] mx-auto px-6 md:px-16">
+        <div class="rounded-full py-12 md:py-16 px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-8" style="background: linear-gradient(180deg, #047F01 -19.92%, #FFFFFF -4.32%, #047E01 7.78%, #047F01 92.62%, #FFFFFF 108.2%);">
+          <!-- Text on Left -->
+          <h2 class="text-3xl md:text-4xl font-bold text-white">
+            Contact us on Whatsapp
+          </h2>
+          
+          <!-- Button on Right -->
+          <a href="https://wa.me/" target="_blank" class="bg-white text-green-600 font-semibold px-8 md:px-12 py-3 md:py-4 rounded-2xl hover:bg-gray-100 transition duration-300 flex-shrink-0">
+            Start Chat
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Saudi Arabia Section -->
+    <section class="bg-black w-full text-white pb-20 md:pb-32 md:px-[125px]">
+      <div class="relative w-full  h-[420px]">
+        <img
+          src="/public/destinationsBottomImg.png"
+          alt="Cave in Saudi Arabia"
+          class="absolute inset-0 w-full h-full object-cover z-0"
+        />
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10"></div>
+
+        <!-- Content -->
+        <div class="absolute inset-0 flex flex-col justify-center px-6 md:px-16 z-20">
+          <div class="max-w-xl">
+            <h2 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+              Explore<br>Saudi Arabia
+            </h2>
+          </div>
+          <button class="absolute right-8 md:right-16 top-1/2 transform -translate-y-1/2 
+               text-white rounded-full p-4 
+               border border-white
+               hover:bg-gray-200 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class=" bg-[#222222] text-white">
+      <div class="max-w-[1400px] mx-auto px-6 md:px-16 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <img
+              src="/public/icon.png"
+              alt="Saudi Welcome to Arabia"
+              width="160"
+              height="90"
+              class="object-contain"
+            />
+          </div>
+
+          <!-- Links Columns -->
+          <div class="flex gap-20 md:gap-32">
+            <!-- About -->
+            <div>
+              <h4 class="font-semibold text-base mb-6">About</h4>
+              <ul class="space-y-3">
+                <li><a href="/dist/aboutus.html" class="text-gray-300 hover:text-white transition text-sm">About us</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">Features</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">News & Blogs</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <h4 class="font-semibold text-base mb-6">Contact</h4>
+              <ul class="space-y-3">
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">Instagram</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">Twitter</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">Facebook</a></li>
+              </ul>
+            </div>
+
+            <!-- Support -->
+            <div>
+              <h4 class="font-semibold text-base mb-6">Support</h4>
+              <ul class="space-y-3">
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">FAQs</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">Support Centre</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">Feedback</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Theme Toggle Script
+      const themeToggle = document.getElementById('themeToggle');
+      const toggleBg = document.getElementById('toggleBg');
+      const sunIcon = document.getElementById('sunIcon');
+      const moonIcon = document.getElementById('moonIcon');
+      const html = document.documentElement;
+
+      // Check for saved theme preference or default to 'dark'
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+      html.setAttribute('data-theme', currentTheme);
+      updateThemeIcon(currentTheme);
+      updateTogglePosition(currentTheme);
+
+      themeToggle.addEventListener('click', () => {
+        const theme = html.getAttribute('data-theme');
+        const newTheme = theme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+        updateTogglePosition(newTheme);
+      });
+
+      function updateThemeIcon(theme) {
+        if (theme === 'light') {
+          sunIcon.classList.remove('hidden');
+          moonIcon.classList.add('hidden');
+        } else {
+          sunIcon.classList.add('hidden');
+          moonIcon.classList.remove('hidden');
+        }
+      }
+
+      function updateTogglePosition(theme) {
+        if (theme === 'light') {
+          toggleBg.style.transform = 'translateX(24px)';
+        } else {
+          toggleBg.style.transform = 'translateX(0)';
+        }
+      }
+
+      // Apply theme styles
+      const style = document.createElement('style');
+      style.textContent = `
+        :root {
+          --bg-primary: #000000;
+          --text-primary: #ffffff;
+          --bg-secondary: #222222;
+        }
+
+        html[data-theme="light"] {
+          --bg-primary: #ffffff;
+          --text-primary: #000000;
+          --bg-secondary: #e8e8e8;
+        }
+
+        html[data-theme="light"] body {
+          background-color: var(--bg-primary);
+          color: var(--text-primary);
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        html[data-theme="light"] section.bg-black {
+          background-color: var(--bg-secondary) !important;
+        }
+
+        html[data-theme="light"] h1,
+        html[data-theme="light"] h2,
+        html[data-theme="light"] h3,
+        html[data-theme="light"] p {
+          color: var(--text-primary);
+        }
+
+        html[data-theme="light"] header h1,
+        html[data-theme="light"] header h2,
+        html[data-theme="light"] header h3,
+        html[data-theme="light"] header p {
+          color: #ffffff !important;
+        }
+
+        html[data-theme="light"] nav a {
+          color: #ffffff;
+        }
+
+        html[data-theme="light"] nav a:hover {
+          color: #d3d3d3;
+        }
+      `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>

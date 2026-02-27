@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body>
+    <header
+      class="relative min-h-screen bg-[url('/public/aboutUsHeroSectionImg.png')] bg-cover bg-center"
+    >
+      <nav class="flex justify-between relative z-20">
+        <img
+          src="/public/icon.png"
+          class="mt-[80px] ml-[91px]"
+          alt="icon"
+          width="213px"
+          height="118px"
+        />
+        <ul
+          class="flex justify-between gap-[55px] mt-[87px] mr-[186px] text-white items-center"
+          >
+          <li>
+            <button id="themeToggle" class="relative inline-flex items-center w-14 h-8 rounded-full border border-white bg-black transition-colors duration-300" aria-label="Toggle theme">
+              <!-- Sliding background -->
+              <div id="toggleBg" class="absolute left-0 w-7 h-7 bg-white rounded-full transition-transform duration-300 transform"></div>
+              <!-- Icons -->
+              <div class="relative flex items-center justify-center w-7 h-7 ml-0.5 z-10">
+                <svg id="sunIcon" class="w-4 h-4 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.536l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.121-10.121a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm5.657-9.193a1 1 0 00-1.414 0l-.707.707A1 1 0 005.05 6.464l.707-.707a1 1 0 011.414-1.414zM5 11a1 1 0 100-2H4a1 1 0 100 2h1z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div class="relative flex items-center justify-center w-7 h-7 mr-0.5 z-10">
+                <svg id="moonIcon" class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+              </div>
+            </button>
+          </li>
+          <li><a href="/dist/destinations.html" class="hover:text-gray-300 transition">Destinations</a></li>
+          <li><a href="#members" class="hover:text-gray-300 transition">Members</a></li>
+          <li><a href="#gallery" class="hover:text-gray-300 transition">Gallory</a></li>
+        </ul>
+      </nav>
+      <section
+        class="flex flex-col justify-center items-center text-center mx-auto max-w-xl px-8 md:px-16 py-20 text-white relative z-10"
+      >
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          About Us
+        </h1>
+        <p class="text-lg md:text-xl text-white/90">
+         Discover the country's hidden gems and breathtaking landscapes
+        </p>
+    </section>
+    </header>
+    <section class="bg-black">
+      <section class="py-[84px] pr-[78px] pl-[107px] flex justify-between">
+        <img
+          src="/public/companyLogo1.png"
+          alt="logo1"
+          width="290px"
+          height="88px"
+        />
+        <img
+          src="/public/companyLogo2.png"
+          alt="logo1"
+          width="340px"
+          height="121px"
+        />
+        <img
+          src="/public/companyLogo3.png"
+          alt="logo1"
+          width="230px"
+          height="115px"
+        />
+        <img
+          src="/public/companyLogo4.png"
+          alt="logo1"
+          width="254px"
+          height="118px"
+        />
+      </section>
+      <section
+        class="flex flex-col justify-center items-center text-center text-white"
+      >
+        <h3 class="font-medium text-[40px]">Saudi, a kingdom that inspires</h3>
+        <p class="font-normal text-[20px]">
+          A uniquely Saudi experience awaits in winter
+        </p>
+      </section>
+      <!-- Traditions Section -->
+      <section class="bg-black w-full text-white py-20 md:py-0 md:pt-32 px-6 md:px-16">
+        <div class="max-w-[1400px] mx-auto">
+          <!-- Section Header -->
+          <div class="mb-16">
+            <h2 class="text-5xl md:text-6xl font-bold">Traditions of Saudi Arabia</h2>
+          </div>
+
+          <!-- Content Layout -->
+          <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+            <!-- Left: Image -->
+            <div class="flex-shrink-0 w-full md:w-[45%]">
+              <img 
+                src="/public/aboutUsRemainingImg1.png" 
+                alt="Traditions of Saudi Arabia" 
+                class="w-full rounded-4xl object-cover shadow-2xl"
+                style="aspect-ratio: 16/14"
+              />
+            </div>
+            
+            <!-- Right: Content -->
+            <div class="flex-1 w-full md:w-[55%] relative min-h-[300px]">
+              <h3 class="text-4xl md:text-5xl font-bold mb-8 text-white">Language</h3>
+              <p class="text-base md:text-[30px] leading-8 text-white/90 mb-12">
+                Arabic is the official language of Saudi Arabia and the primary language used in all dealings and public transactions. English serves as an informal second language in the Kingdom and is spoken by a large section of its society. All road signs are bilingual, showing information in both Arabic and English.
+              </p>
+              
+              <!-- Arrow Icon Button -->
+              <button class="absolute bottom-0 right-0 rounded-full border-2 border-white p-4 hover:bg-white hover:text-black transition duration-300 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Heritage Section -->
+      <section class="bg-black w-full text-white py-20 md:py-32 px-6 md:px-16">
+        <div class="max-w-[1400px] mx-auto">
+          <!-- Content Layout - Reversed -->
+          <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
+            <!-- Right: Image -->
+            <div class="flex-shrink-0 w-full md:w-[45%]">
+              <img 
+                src="/public/aboutUsRemainingImg2.png" 
+                alt="Heritage of Saudi Arabia" 
+                class="w-full rounded-4xl object-cover shadow-2xl"
+                style="aspect-ratio: 16/14"
+              />
+            </div>
+            
+            <!-- Left: Content -->
+            <div class="flex-1 w-full md:w-[55%] relative min-h-[300px]">
+              <h3 class="text-4xl md:text-5xl font-bold mb-8 text-white">Culture</h3>
+              <p class="text-base md:text-[30px] leading-8 text-white/90 mb-12">
+                Saudi Arabia’s rich heritage and traditions have been shaped by its position as a historic trade hub and the birthplace of Islam. In recent years, the Kingdom has undergone a significant cultural transformation, evolving centuy-old customs to fit the contemporary world we live in today.
+              </p>
+              
+              <!-- Arrow Icon Button -->
+              <button class="absolute bottom-0 right-0 rounded-full border-2 border-white p-4 hover:bg-white hover:text-black transition duration-300 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- WhatsApp Contact Section -->
+    <section class="bg-black w-full text-white pb-16 md:pb-24">
+      <div class="max-w-[1400px] mx-auto px-6 md:px-16">
+        <div class="rounded-full py-12 md:py-16 px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-8" style="background: linear-gradient(180deg, #047F01 -19.92%, #FFFFFF -4.32%, #047E01 7.78%, #047F01 92.62%, #FFFFFF 108.2%);">
+          <!-- Text on Left -->
+          <h2 class="text-3xl md:text-4xl font-bold text-white">
+            Contact us on Whatsapp
+          </h2>
+          
+          <!-- Button on Right -->
+          <a href="https://wa.me/" target="_blank" class="bg-white text-green-600 font-semibold px-8 md:px-12 py-3 md:py-4 rounded-2xl hover:bg-gray-100 transition duration-300 flex-shrink-0">
+            Start Chat
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Saudi Arabia Section -->
+    <section class="bg-black w-full text-white pb-20 md:pb-32 md:px-[125px]">
+      <div class="relative w-full  h-[420px]">
+        <img
+          src="/public/aboutUsBottomImg.png"
+          alt="Cave in Saudi Arabia"
+          class="absolute inset-0 w-full h-full object-cover z-0"
+        />
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10"></div>
+
+        <!-- Content -->
+        <div class="absolute inset-0 flex flex-col justify-center px-6 md:px-16 z-20">
+          <div class="max-w-xl">
+            <h2 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+              Rules of Behaviour KSA
+            </h2>
+          </div>
+          <button class="absolute right-8 md:right-16 top-1/2 transform -translate-y-1/2 
+               text-white rounded-full p-4 
+               border border-white
+               hover:bg-gray-200 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class=" bg-[#222222] text-white">
+      <div class="max-w-[1400px] mx-auto px-6 md:px-16 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <img
+              src="/public/icon.png"
+              alt="Saudi Welcome to Arabia"
+              width="160"
+              height="90"
+              class="object-contain"
+            />
+          </div>
+
+          <!-- Links Columns -->
+          <div class="flex gap-20 md:gap-32">
+            <!-- About -->
+            <div>
+              <h4 class="font-semibold text-base mb-6">About</h4>
+              <ul class="space-y-3">
+                <li><a href="/dist/aboutus.html" class="text-gray-300 hover:text-white transition text-sm">About us</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">Features</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">News & Blogs</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <h4 class="font-semibold text-base mb-6">Contact</h4>
+              <ul class="space-y-3">
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">Instagram</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">Twitter</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">Facebook</a></li>
+              </ul>
+            </div>
+
+            <!-- Support -->
+            <div>
+              <h4 class="font-semibold text-base mb-6">Support</h4>
+              <ul class="space-y-3">
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">FAQs</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">Support Centre</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white transition text-sm">Feedback</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Theme Toggle Script
+      const themeToggle = document.getElementById('themeToggle');
+      const toggleBg = document.getElementById('toggleBg');
+      const sunIcon = document.getElementById('sunIcon');
+      const moonIcon = document.getElementById('moonIcon');
+      const html = document.documentElement;
+
+      // Check for saved theme preference or default to 'dark'
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+      html.setAttribute('data-theme', currentTheme);
+      updateThemeIcon(currentTheme);
+      updateTogglePosition(currentTheme);
+
+      themeToggle.addEventListener('click', () => {
+        const theme = html.getAttribute('data-theme');
+        const newTheme = theme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+        updateTogglePosition(newTheme);
+      });
+
+      function updateThemeIcon(theme) {
+        if (theme === 'light') {
+          sunIcon.classList.remove('hidden');
+          moonIcon.classList.add('hidden');
+        } else {
+          sunIcon.classList.add('hidden');
+          moonIcon.classList.remove('hidden');
+        }
+      }
+
+      function updateTogglePosition(theme) {
+        if (theme === 'light') {
+          toggleBg.style.transform = 'translateX(24px)';
+        } else {
+          toggleBg.style.transform = 'translateX(0)';
+        }
+      }
+
+      // Apply theme styles
+      const style = document.createElement('style');
+      style.textContent = `
+        :root {
+          --bg-primary: #000000;
+          --text-primary: #ffffff;
+          --bg-secondary: #222222;
+        }
+
+        html[data-theme="light"] {
+          --bg-primary: #ffffff;
+          --text-primary: #000000;
+          --bg-secondary: #e8e8e8;
+        }
+
+        html[data-theme="light"] body {
+          background-color: var(--bg-primary);
+          color: var(--text-primary);
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        html[data-theme="light"] section.bg-black {
+          background-color: var(--bg-secondary) !important;
+        }
+
+        html[data-theme="light"] h1,
+        html[data-theme="light"] h2,
+        html[data-theme="light"] h3,
+        html[data-theme="light"] p {
+          color: var(--text-primary);
+        }
+
+        html[data-theme="light"] header h1,
+        html[data-theme="light"] header h2,
+        html[data-theme="light"] header h3,
+        html[data-theme="light"] header p {
+          color: #ffffff !important;
+        }
+
+        html[data-theme="light"] nav a {
+          color: #ffffff;
+        }
+
+        html[data-theme="light"] nav a:hover {
+          color: #d3d3d3;
+        }
+      `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>
