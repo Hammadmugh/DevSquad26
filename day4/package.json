@@ -1,0 +1,13 @@
+{
+  "name": "tailwind-html-project",
+  "version": "1.0.0",
+  "description": "Simple HTML project with Tailwind CSS",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.32"
+  }
+}

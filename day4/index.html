@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hackathon-HTMLTAILWIND</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Imperial+Script&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/output.css" />
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col">
+      <nav
+        class="flex justify-between items-center md:px-[167.4px] md:py-[31.05px] relative z-20 bg-gray-800"
+      >
+        <h2 class="text-[27px] font-bold text-white">LogoHere</h2>
+        <ul
+          class="flex justify-between gap-[55.4px] text-white items-center md:text-[21.6px] font-semibold"
+        >
+          <li><a href="#" class="hover:text-gray-300 transition">About</a></li>
+          <li>
+            <a href="#" class="hover:text-gray-300 transition">Collection</a>
+          </li>
+          <li>
+            <a href="#members" class="hover:text-gray-300 transition"
+              >Creator</a
+            >
+          </li>
+          <li>
+            <a href="#gallery" class="hover:text-gray-300 transition"
+              >Road Map</a
+            >
+          </li>
+          <li>
+            <button
+              class="md:pt-[12.15px] md:pb-[20.65px] md:pl-[63.45px] md:pr-[81.25px] text-white bg-[#DA8F4D] border border-white rounded-3xl"
+            >
+              sign in
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <section
+        class="flex-1 relative bg-[url('/assets/bg-img.png')] bg-cover bg-center"
+      >
+        <div class="max-w-[1400px] mx-auto mt-[238.95px]">
+          <div
+            class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20"
+          >
+            <!-- Right: Image -->
+            <div class="flex-shrink-0 w-full md:w-[45%]">
+              <img
+                src="/assets/tiger-img.png"
+                alt="Tiger"
+                class="md:w-[487.614990234375px] md:h-[652.6173095703125px] object-cover"
+              />
+            </div>
+
+            <!-- Left: Content -->
+            <div class="flex-1 w-full md:w-[55%] relative min-h-[300px]">
+              <h1 class="text-[86px] md:text-5xl font-bold mb-8 text-white">
+                We Have High <br />Quality
+                <span class="text-[#DA8F4D]">NFT</span><br />Collections
+              </h1>
+              <p class="md:text-[13.2px] text-[#B3B3B3]">
+                Lorem ipsum dolor sit amet consectetur. Rhoncus massa
+                suspendisse turpis sed viverra tempus tortor. Habitant accumsan
+                sagittis in facilisi placerat ac. Laoreet scelerisque viverra
+                viverra ornare fermentum faucibus sit purus volutpat. Egestas
+                lectus ornare convallis ornare nullam enim neque.
+              </p>
+              <div class="flex md:gap-[50.37px] md:mt-[58.64px]">
+                <button
+                  class="md:font-bold text-white md:text-[17.2px] bg-[#DA8F4D] border border-white pt-[17.2px] pb-[15.77px] pl-[43px] pr-[42.02px] rounded-2xl"
+                >
+                  Get Whitelist
+                </button>
+                <button
+                  class="md:font-bold text-white md:text-[17.2px] bg-transparent border border-white pt-[17.2px] pb-[15.77px] pl-[41.77px] pr-[59.25px] rounded-2xl"
+                >
+                  Contact Us
+                </button>
+              </div>
+              <div
+                class="flex justify-between text-white pt-[34.4px] pb-[28.25px] pl-[15.97px] pr-[34.4px] rounded-2xl bg-[#6B6B6B21] mt-[70.02px]"
+              >
+                <section>
+                  <h3 class="font-bold text-[34.4px] leading-[1.4]">240k+</h3>
+                  <p class="leading-[1.6] text-[29.47px]">Total Sale</p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-[34.4px] leading-[1.4]">100k+</h3>
+                  <p class="leading-[1.6] text-[29.47px]">Auctions</p>
+                </section>
+                <section>
+                  <h3 class="font-bold text-[34.4px] leading-[1.4]">240k+</h3>
+                  <p class="leading-[1.6] text-[29.47px]">Artists</p>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section
+      class="flex justify-center items-center bg-black pt-[20.32px] pb-[131.23px]"
+    >
+      <h2 class="font-bold text-[54px] text-white">About Us</h2>
+    </section>
+    <section class="bg-stone-900 grid grid-cols-2 px-[156.6px] py-[39.64px]">
+      <section class="grid grid-cols-2">
+        <img
+          class="bg-[#2B2B2BAD] rounded-xl px-[27px] w-[297px] h-[258.32px]"
+          src="/assets/member1.png"
+          alt="member1"
+        />
+        <img
+          class="bg-[#2B2B2BAD] rounded-xl md:-ml-[55px] px-[27px] w-[297px] h-[258.32px]"
+          src="/assets/member2.png"
+          alt="member2"
+        />
+        <img
+          class="bg-[#2B2B2BAD] rounded-xl mt-[54px] px-[27px] w-[297px] h-[258.32px]"
+          src="/assets/member3.png"
+          alt="member3"
+        />
+        <img
+          class="bg-[#2B2B2BAD] rounded-xl mt-[54px] md:-ml-[55px] px-[27px] w-[297px] h-[258.32px]"
+          src="/assets/member4.png"
+          alt="member4"
+        />
+      </section>
+      <section>
+        <p class="font-bold text-[16.2px] leading-[1.468] text-white">
+          Lorem ipsum dolor sit amet consectetur. Pharetra faucibus donec
+          ultrices eros elit metus morbi aliquam quis. Suspendisse massa
+          ullamcorper tortor morbi nisi leo. Ultrices leo vel tincidunt nunc
+          eget elit. Gravida et duis ipsum pellentesque libero. Tellus rhoncus
+          metus et eget mattis fringilla nec id. Amet ultrices quam ridiculus
+          tellus. Leo adipiscing tincidunt amet nisi semper adipiscing quam in
+          est. Tempor sed dui nunc diam adipiscing at.
+        </p>
+        <p class="font-bold text-[16.2px] leading-[1.468] text-white">
+          Tellus rhoncus metus et eget mattis fringilla nec id. Amet ultrices
+          quam ridiculus tellus. Leo adipiscing tincidunt amet nisi semper
+          adipiscing quam in est. Tempor sed dui nunc diam adipiscing at.
+        </p>
+        <button
+          class="md:font-bold text-white md:text-[17.2px] bg-[#DA8F4D] border border-white pt-[17.2px] pb-[15.77px] pl-[41.77px] pr-[59.25px] rounded-2xl md:mt-[54px]"
+        >
+          Connect Wallet
+        </button>
+      </section>
+    </section>
+    <section
+      class="relative flex flex-col justify-center items-center text-center md:px-16 py-20 text-white bg-black overflow-hidden"
+    >
+      <div
+        class="absolute bottom-0 left-0 w-[400px] h-[400px] blur-3xl pointer-events-none bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.15),transparent_70%)]"
+      ></div>
+
+      <h1 class="md:text-[54px] font-bold mb-6">Top Collections</h1>
+      <p class="md:text-[18.53px] text-white/90">
+        The largest and unique Super rare NFT marketplace For
+        crypto-collectibles
+      </p>
+    </section>
+    <section
+      class="flex-1 relative bg-[url('/assets/bg-img.png')] bg-cover bg-center py-20"
+    >
+      <section class="grid grid-cols-3 px-20 gap-8 max-w-7xl mx-auto">
+        <!-- Card 1 -->
+        <section
+          class="group rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)]"
+        >
+          <div class="p-6">
+            <p class="text-[#B4C7CE] text-sm mb-2">Created by</p>
+            <div class="flex items-center gap-2">
+              <div
+                class="w-6 h-6 bg-gradient-to-br from-[#DA8F4D] to-[#EA9112] rounded-full flex items-center justify-center"
+              >
+                <div class="w-4 h-4 bg-white rounded-full"></div>
+              </div>
+              <p class="text-[#EA9112] font-semibold">James Watson</p>
+            </div>
+          </div>
+          <div
+            class="relative overflow-hidden flex items-center justify-center py-12"
+          >
+            <img
+              src="assets/collection1.png"
+              alt="collection1"
+              class="w-48 h-48 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <p class="text-[#B4C7CE] text-start text-sm">
+              Created by
+              <span class="text-[#EA9112] font-semibold">James Watson</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Card 2 -->
+        <section
+          class="group rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)]"
+        >
+          <div class="p-6">
+            <p class="text-[#B4C7CE] text-sm mb-2">Created by</p>
+            <div class="flex items-center gap-2">
+              <div
+                class="w-6 h-6 bg-gradient-to-br from-[#DA8F4D] to-[#EA9112] rounded-full flex items-center justify-center"
+              >
+                <div class="w-4 h-4 bg-white rounded-full"></div>
+              </div>
+              <p class="text-[#EA9112] font-semibold">James Watson</p>
+            </div>
+          </div>
+          <div
+            class="relative overflow-hidden flex items-center justify-center py-12"
+          >
+            <img
+              src="assets/collection2.png"
+              alt="collection1"
+              class="w-48 h-48 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <p class="text-[#B4C7CE] text-start text-sm">
+              Created by
+              <span class="text-[#EA9112] font-semibold">James Watson</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Card 3 -->
+        <section
+          class="group rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)]"
+        >
+          <div class="p-6">
+            <p class="text-[#B4C7CE] text-sm mb-2">Created by</p>
+            <div class="flex items-center gap-2">
+              <div
+                class="w-6 h-6 bg-gradient-to-br from-[#DA8F4D] to-[#EA9112] rounded-full flex items-center justify-center"
+              >
+                <div class="w-4 h-4 bg-white rounded-full"></div>
+              </div>
+              <p class="text-[#EA9112] font-semibold">James Watson</p>
+            </div>
+          </div>
+          <div
+            class="relative overflow-hidden flex items-center justify-center py-12"
+          >
+            <img
+              src="assets/collection3.png"
+              alt="collection1"
+              class="w-48 h-48 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <p class="text-[#B4C7CE] text-start text-sm">
+              Created by
+              <span class="text-[#EA9112] font-semibold">James Watson</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Card 4 -->
+        <section
+          class="group rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)]"
+        >
+          <div class="p-6">
+            <p class="text-[#B4C7CE] text-sm mb-2">Created by</p>
+            <div class="flex items-center gap-2">
+              <div
+                class="w-6 h-6 bg-gradient-to-br from-[#DA8F4D] to-[#EA9112] rounded-full flex items-center justify-center"
+              >
+                <div class="w-4 h-4 bg-white rounded-full"></div>
+              </div>
+              <p class="text-[#EA9112] font-semibold">James Watson</p>
+            </div>
+          </div>
+          <div
+            class="relative overflow-hidden flex items-center justify-center py-12"
+          >
+            <img
+              src="assets/collection4.png"
+              alt="collection1"
+              class="w-48 h-48 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <p class="text-[#B4C7CE] text-start text-sm">
+              Created by
+              <span class="text-[#EA9112] font-semibold">James Watson</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Card 5 -->
+        <section
+          class="group rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)]"
+        >
+          <div class="p-6">
+            <p class="text-[#B4C7CE] text-sm mb-2">Created by</p>
+            <div class="flex items-center gap-2">
+              <div
+                class="w-6 h-6 bg-gradient-to-br from-[#DA8F4D] to-[#EA9112] rounded-full flex items-center justify-center"
+              >
+                <div class="w-4 h-4 bg-white rounded-full"></div>
+              </div>
+              <p class="text-[#EA9112] font-semibold">James Watson</p>
+            </div>
+          </div>
+          <div
+            class="relative overflow-hidden flex items-center justify-center py-12"
+          >
+            <img
+              src="assets/collection5.png"
+              alt="collection1"
+              class="w-48 h-48 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <p class="text-[#B4C7CE] text-start text-sm">
+              Created by
+              <span class="text-[#EA9112] font-semibold">James Watson</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Card 6 -->
+        <section
+          class="group rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)]"
+        >
+          <div class="p-6">
+            <p class="text-[#B4C7CE] text-sm mb-2">Created by</p>
+            <div class="flex items-center gap-2">
+              <div
+                class="w-6 h-6 bg-gradient-to-br from-[#DA8F4D] to-[#EA9112] rounded-full flex items-center justify-center"
+              >
+                <div class="w-4 h-4 bg-white rounded-full"></div>
+              </div>
+              <p class="text-[#EA9112] font-semibold">James Watson</p>
+            </div>
+          </div>
+          <div
+            class="relative overflow-hidden flex items-center justify-center py-12"
+          >
+            <img
+              src="assets/collection6.png"
+              alt="collection1"
+              class="w-48 h-48 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <p class="text-[#B4C7CE] text-start text-sm">
+              Created by
+              <span class="text-[#EA9112] font-semibold">James Watson</span>
+            </p>
+          </div>
+        </section>
+      </section>
+      <div class="flex justify-center">
+        <button
+          class="md:font-bold text-white md:text-[17.2px] bg-[#DA8F4D] border border-white pt-[17.2px] pb-[15.77px] pl-[41.77px] pr-[59.25px] rounded-2xl md:mt-[54px]"
+        >
+          Explore more
+        </button>
+      </div>
+    </section>
+    <section
+      class="relative flex flex-col justify-center items-center text-center md:px-16 py-20 text-white bg-black overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-[400px] h-[400px] pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_70%)]"
+      ></div>
+
+      <h1 class="md:text-[54px] font-bold mb-6">Top Creaters</h1>
+      <p class="md:text-[18.53px] text-white/90">
+        Checkout Top Rated Creators on the NFT Marketplace
+      </p>
+    </section>
+    <section class="flex-1 relative bg-black py-20">
+      <section class="grid grid-cols-4 px-20 gap-8 max-w-7xl mx-auto">
+        <!-- Card 1 -->
+        <section
+          class="group h-80 rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)] flex flex-col relative"
+        >
+          <div class="absolute top-4 left-4 z-10">
+            <div
+              class="w-10 h-10 bg-[#2B2B2B] rounded-full flex items-center justify-center"
+            >
+              <p class="text-[#858584] font-bold text-lg">1</p>
+            </div>
+          </div>
+          <div
+            class="flex-1 flex items-center justify-center relative overflow-hidden"
+          >
+            <img
+              src="assets/creater1.png"
+              alt="creater1"
+              class="w-40 h-40 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div
+            class="bg-gradient-to-t from-black/80 to-transparent p-4 text-center"
+          >
+            <p class="text-white font-semibold text-base">Creator Name</p>
+            <p class="text-[#858584] text-xs mt-1">
+              Total Sales:
+              <span class="text-white font-semibold">34.53 ETH</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Card 2 -->
+        <section
+          class="group h-80 rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)] flex flex-col relative"
+        >
+          <div class="absolute top-4 left-4 z-10">
+            <div
+              class="w-10 h-10 bg-[#2B2B2B] rounded-full flex items-center justify-center"
+            >
+              <p class="text-[#858584] font-bold text-lg">2</p>
+            </div>
+          </div>
+          <div
+            class="flex-1 flex items-center justify-center relative overflow-hidden"
+          >
+            <img
+              src="assets/creater2.png"
+              alt="creater2"
+              class="w-40 h-40 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div
+            class="bg-gradient-to-t from-black/80 to-transparent p-4 text-center"
+          >
+            <p class="text-white font-semibold text-base">Creator Name</p>
+            <p class="text-[#858584] text-xs mt-1">
+              Total Sales:
+              <span class="text-white font-semibold">34.53 ETH</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Card 3 -->
+        <section
+          class="group h-80 rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)] flex flex-col relative"
+        >
+          <div class="absolute top-4 left-4 z-10">
+            <div
+              class="w-10 h-10 bg-[#2B2B2B] rounded-full flex items-center justify-center"
+            >
+              <p class="text-[#858584] font-bold text-lg">3</p>
+            </div>
+          </div>
+          <div
+            class="flex-1 flex items-center justify-center relative overflow-hidden"
+          >
+            <img
+              src="assets/creater3.png"
+              alt="creater3"
+              class="w-40 h-40 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div
+            class="bg-gradient-to-t from-black/80 to-transparent p-4 text-center"
+          >
+            <p class="text-white font-semibold text-base">Creator Name</p>
+            <p class="text-[#858584] text-xs mt-1">
+              Total Sales:
+              <span class="text-white font-semibold">34.53 ETH</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Card 4 -->
+        <section
+          class="group h-80 rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)] flex flex-col relative"
+        >
+          <div class="absolute top-4 left-4 z-10">
+            <div
+              class="w-10 h-10 bg-[#2B2B2B] rounded-full flex items-center justify-center"
+            >
+              <p class="text-[#858584] font-bold text-lg">4</p>
+            </div>
+          </div>
+          <div
+            class="flex-1 flex items-center justify-center relative overflow-hidden"
+          >
+            <img
+              src="assets/creater4.png"
+              alt="creater4"
+              class="w-40 h-40 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div
+            class="bg-gradient-to-t from-black/80 to-transparent p-4 text-center"
+          >
+            <p class="text-white font-semibold text-base">Creator Name</p>
+            <p class="text-[#858584] text-xs mt-1">
+              Total Sales:
+              <span class="text-white font-semibold">34.53 ETH</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Card 5 -->
+        <section
+          class="group h-80 rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)] flex flex-col relative"
+        >
+          <div class="absolute top-4 left-4 z-10">
+            <div
+              class="w-10 h-10 bg-[#2B2B2B] rounded-full flex items-center justify-center"
+            >
+              <p class="text-[#858584] font-bold text-lg">5</p>
+            </div>
+          </div>
+          <div
+            class="flex-1 flex items-center justify-center relative overflow-hidden"
+          >
+            <img
+              src="assets/creater5.png"
+              alt="creater5"
+              class="w-40 h-40 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div
+            class="bg-gradient-to-t from-black/80 to-transparent p-4 text-center"
+          >
+            <p class="text-white font-semibold text-base">Creator Name</p>
+            <p class="text-[#858584] text-xs mt-1">
+              Total Sales:
+              <span class="text-white font-semibold">34.53 ETH</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Card 6 -->
+        <section
+          class="group h-80 rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)] flex flex-col relative"
+        >
+          <div class="absolute top-4 left-4 z-10">
+            <div
+              class="w-10 h-10 bg-[#2B2B2B] rounded-full flex items-center justify-center"
+            >
+              <p class="text-[#858584] font-bold text-lg">6</p>
+            </div>
+          </div>
+          <div
+            class="flex-1 flex items-center justify-center relative overflow-hidden"
+          >
+            <img
+              src="assets/creater6.png"
+              alt="creater6"
+              class="w-40 h-40 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div
+            class="bg-gradient-to-t from-black/80 to-transparent p-4 text-center"
+          >
+            <p class="text-white font-semibold text-base">Creator Name</p>
+            <p class="text-[#858584] text-xs mt-1">
+              Total Sales:
+              <span class="text-white font-semibold">34.53 ETH</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Card 7 -->
+        <section
+          class="group h-80 rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)] flex flex-col relative"
+        >
+          <div class="absolute top-4 left-4 z-10">
+            <div
+              class="w-10 h-10 bg-[#2B2B2B] rounded-full flex items-center justify-center"
+            >
+              <p class="text-[#858584] font-bold text-lg">7</p>
+            </div>
+          </div>
+          <div
+            class="flex-1 flex items-center justify-center relative overflow-hidden"
+          >
+            <img
+              src="assets/creater7.png"
+              alt="creater7"
+              class="w-40 h-40 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div
+            class="bg-gradient-to-t from-black/80 to-transparent p-4 text-center"
+          >
+            <p class="text-white font-semibold text-base">Creator Name</p>
+            <p class="text-[#858584] text-xs mt-1">Total Sales:</p>
+            <p class="text-white font-semibold text-sm">34.53 ETH</p>
+          </div>
+        </section>
+
+        <!-- Card 8 -->
+        <section
+          class="group h-80 rounded-2xl bg-gradient-to-b from-[#F4E9C4]/20 to-[#F4E9C4]/5 backdrop-blur-sm border border-[#F4E9C4]/30 overflow-hidden hover:border-[#DA8F4D]/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_rgba(218,143,77,0.2)] flex flex-col relative"
+        >
+          <div class="absolute top-4 left-4 z-10">
+            <div
+              class="w-10 h-10 bg-[#2B2B2B] rounded-full flex items-center justify-center"
+            >
+              <p class="text-[#858584] font-bold text-lg">8</p>
+            </div>
+          </div>
+          <div
+            class="flex-1 flex items-center justify-center relative overflow-hidden"
+          >
+            <img
+              src="assets/creater8.png"
+              alt="creater8"
+              class="w-40 h-40 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div
+            class="bg-gradient-to-t from-black/80 to-transparent p-4 text-center"
+          >
+            <p class="text-white font-semibold text-base">Creator Name</p>
+            <p class="text-[#858584] text-xs mt-1">
+              Total Sales:
+              <span class="text-white font-semibold">34.53 ETH</span>
+            </p>
+          </div>
+        </section>
+      </section>
+    </section>
+<!-- Timeline Section -->
+    <section class="relative w-full overflow-hidden py-[120px]">
+      <img
+        src="/assets/bg-img.png"
+        alt="Timeline Background"
+        class="absolute inset-0 w-full h-full brightness-[0.25] object-cover -z-10"
+      />
+
+      <div class="relative max-w-[1728px] mx-auto px-6 md:px-[146px]">
+        <!-- Header -->
+        <div class="flex justify-center mb-[100px]">
+          <h2 class="text-white font-bold text-[54px]">Road Map</h2>
+        </div>
+
+        <!-- Vertical Center Line -->
+        <div
+          class="absolute left-[34px] md:left-1/2 top-[220px] bottom-[50px] md:-translate-x-1/2"
+          style="
+            width: 4.62px;
+            background: linear-gradient(
+              to bottom,
+              rgba(228, 223, 206, 0.7) 0%,
+              rgba(230, 187, 39, 0.7) 50%,
+              rgba(228, 223, 206, 0.7) 100%
+            );
+          "
+        ></div>
+
+        <div class="relative flex flex-col gap-10 md:gap-[80px]">
+          <!-- Item (Left) -->
+          <div
+            class="flex flex-col md:flex-row justify-between w-full relative group"
+          >
+            <div
+              class="w-full md:w-[calc(50%-60px)] pl-[60px] md:pl-0 flex justify-end"
+            >
+              <div class="w-full max-w-[500px] relative">
+                <!-- Glowing Half Border -->
+                <div
+                  class="absolute rounded-[18.46px] pointer-events-none"
+                  style="
+                    top: -14px;
+                    right: -14px;
+                    bottom: -14px;
+                    left: 0px;
+                    background: linear-gradient(
+                      270deg,
+                      #e5e0cf 0.12%,
+                      #cf9833 15%,
+                      rgba(238, 227, 188, 0) 65%
+                    );
+                    border-radius: 18.46px;
+                    padding: 6.92px;
+                    -webkit-mask:
+                      linear-gradient(#fff 0 0) content-box,
+                      linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    clip-path: inset(0 0 0 65%);
+                  "
+                ></div>
+                <!-- Card -->
+                <div
+                  class="rounded-[9.23px] bg-timeline-bg border-[1.15px] border-timeline-border p-[40px] relative backdrop-blur-md text-white"
+                >
+                  <h4
+                    class="text-white text-center font-['Clash_Display',sans-serif] text-[18px] mb-4 tracking-wide relative"
+                  >
+                    January
+                  </h4>
+                  <h3
+                    class="text-white font-bold text-[36px] font-['Clash_Display',sans-serif] mb-5 tracking-wide relative"
+                  >
+                    Brief
+                  </h3>
+                  <p
+                    class="text-light-gray font-['Poppins',sans-serif] text-[14px] leading-[26px] relative"
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Elit massa erat
+                    vitae non semper quis. Morbi sed aliquet donec facilisis.
+                    Senectus eget.
+                  </p>
+                </div>
+                <!-- Connector Line (Desktop) -->
+                <div
+                  class="hidden md:block absolute top-1/2 -translate-y-1/2 -right-[46px] w-[46px] border-t-[1px] border-dashed border-[#E2DDD0] opacity-50 -z-10"
+                ></div>
+              </div>
+            </div>
+            <!-- Center Dot -->
+            <div
+              class="absolute left-[24px] md:left-1/2 top-1/2 w-[27px] h-[27px] rounded-full bg-[#E4E0CF] shadow-[0_0_15px_#E4E0CF80] -translate-x-1/2 -translate-y-1/2 z-10"
+            ></div>
+            <!-- Spacer -->
+            <div class="hidden md:block w-full md:w-[calc(50%-60px)]"></div>
+          </div>
+
+          <!-- Item (Right) -->
+          <div
+            class="flex flex-col md:flex-row justify-between w-full relative group"
+          >
+            <!-- Spacer -->
+            <div class="hidden md:block w-full md:w-[calc(50%-60px)]"></div>
+            <!-- Center Dot -->
+            <div
+              class="absolute left-[24px] md:left-1/2 top-1/2 w-[27px] h-[27px] rounded-full bg-[#E08C3C] shadow-[0_0_15px_#E08C3C80] -translate-x-1/2 -translate-y-1/2 z-10"
+            ></div>
+            <!-- Content -->
+            <div
+              class="w-full md:w-[calc(50%-60px)] pl-[60px] md:pl-0 flex justify-start"
+            >
+              <div class="w-full max-w-[500px] relative">
+                <!-- Glowing Half Border -->
+                <div
+                  class="absolute rounded-[18.46px] pointer-events-none"
+                  style="
+                    top: -14px;
+                    left: -14px;
+                    bottom: -14px;
+                    right: 0px;
+                    background: linear-gradient(
+                      90deg,
+                      #e5e0cf 0.12%,
+                      #cf9833 15%,
+                      rgba(238, 227, 188, 0) 65%
+                    );
+                    border-radius: 18.46px;
+                    padding: 6.92px;
+                    -webkit-mask:
+                      linear-gradient(#fff 0 0) content-box,
+                      linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    clip-path: inset(0 65% 0 0);
+                  "
+                ></div>
+                <!-- Connector Line (Desktop) -->
+                <div
+                  class="hidden md:block absolute top-1/2 -translate-y-1/2 -left-[46px] w-[46px] border-t-[1px] border-dashed border-[#E08C3C] opacity-50 -z-10"
+                ></div>
+                <!-- Card -->
+                <div
+                  class="rounded-[9.23px] bg-timeline-bg border-[1.15px] border-timeline-border p-[40px] relative backdrop-blur-md text-white"
+                >
+                  <h4
+                    class="text-white text-center font-['Clash_Display',sans-serif] text-[18px] mb-4 tracking-wide relative"
+                  >
+                    February
+                  </h4>
+                  <h3
+                    class="text-white font-bold text-[36px] font-['Clash_Display',sans-serif] mb-5 tracking-wide relative"
+                  >
+                    Research
+                  </h3>
+                  <p
+                    class="text-light-gray font-['Poppins',sans-serif] text-[14px] leading-[26px] relative"
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Elit massa erat
+                    vitae non semper quis. Morbi sed aliquet donec facilisis.
+                    Senectus eget.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item (Left) -->
+          <div
+            class="flex flex-col md:flex-row justify-between w-full relative group"
+          >
+            <div
+              class="w-full md:w-[calc(50%-60px)] pl-[60px] md:pl-0 flex justify-end"
+            >
+              <div class="w-full max-w-[500px] relative">
+                <!-- Glowing Half Border -->
+                <div
+                  class="absolute rounded-[18.46px] pointer-events-none"
+                  style="
+                    top: -14px;
+                    right: -14px;
+                    bottom: -14px;
+                    left: 0px;
+                    background: linear-gradient(
+                      270deg,
+                      #e5e0cf 0.12%,
+                      #cf9833 15%,
+                      rgba(238, 227, 188, 0) 65%
+                    );
+                    border-radius: 18.46px;
+                    padding: 6.92px;
+                    -webkit-mask:
+                      linear-gradient(#fff 0 0) content-box,
+                      linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    clip-path: inset(0 0 0 65%);
+                  "
+                ></div>
+                <!-- Card -->
+                <div
+                  class="rounded-[9.23px] bg-timeline-bg border-[1.15px] border-timeline-border p-[40px] relative backdrop-blur-md text-white"
+                >
+                  <h4
+                    class="text-white text-center font-['Clash_Display',sans-serif] text-[18px] mb-4 tracking-wide relative"
+                  >
+                    March
+                  </h4>
+                  <h3
+                    class="text-white font-bold text-[36px] font-['Clash_Display',sans-serif] mb-5 tracking-wide relative"
+                  >
+                    Discover
+                  </h3>
+                  <p
+                    class="text-light-gray font-['Poppins',sans-serif] text-[14px] leading-[26px] relative"
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Elit massa erat
+                    vitae non semper quis. Morbi sed aliquet donec facilisis.
+                    Senectus eget.
+                  </p>
+                </div>
+                <!-- Connector Line (Desktop) -->
+                <div
+                  class="hidden md:block absolute top-1/2 -translate-y-1/2 -right-[46px] w-[46px] border-t-[1px] border-dashed border-[#E2DDD0] opacity-50 -z-10"
+                ></div>
+              </div>
+            </div>
+            <!-- Center Dot -->
+            <div
+              class="absolute left-[24px] md:left-1/2 top-1/2 w-[27px] h-[27px] rounded-full bg-[#E4E0CF] shadow-[0_0_15px_#E4E0CF80] -translate-x-1/2 -translate-y-1/2 z-10"
+            ></div>
+            <!-- Spacer -->
+            <div class="hidden md:block w-full md:w-[calc(50%-60px)]"></div>
+          </div>
+
+          <!-- Item (Right) -->
+          <div
+            class="flex flex-col md:flex-row justify-between w-full relative group"
+          >
+            <!-- Spacer -->
+            <div class="hidden md:block w-full md:w-[calc(50%-60px)]"></div>
+            <!-- Center Dot -->
+            <div
+              class="absolute left-[24px] md:left-1/2 top-1/2 w-[27px] h-[27px] rounded-full bg-[#E08C3C] shadow-[0_0_15px_#E08C3C80] -translate-x-1/2 -translate-y-1/2 z-10"
+            ></div>
+            <!-- Content -->
+            <div
+              class="w-full md:w-[calc(50%-60px)] pl-[60px] md:pl-0 flex justify-start"
+            >
+              <div class="w-full max-w-[500px] relative">
+                <!-- Glowing Half Border -->
+                <div
+                  class="absolute rounded-[18.46px] pointer-events-none"
+                  style="
+                    top: -14px;
+                    left: -14px;
+                    bottom: -14px;
+                    right: 0px;
+                    background: linear-gradient(
+                      90deg,
+                      #e5e0cf 0.12%,
+                      #cf9833 15%,
+                      rgba(238, 227, 188, 0) 65%
+                    );
+                    border-radius: 18.46px;
+                    padding: 6.92px;
+                    -webkit-mask:
+                      linear-gradient(#fff 0 0) content-box,
+                      linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    clip-path: inset(0 65% 0 0);
+                  "
+                ></div>
+                <!-- Connector Line (Desktop) -->
+                <div
+                  class="hidden md:block absolute top-1/2 -translate-y-1/2 -left-[46px] w-[46px] border-t-[1px] border-dashed border-[#E08C3C] opacity-50 -z-10"
+                ></div>
+                <!-- Card -->
+                <div
+                  class="rounded-[9.23px] bg-timeline-bg border-[1.15px] border-timeline-border p-[40px] relative backdrop-blur-md text-white"
+                >
+                  <h4
+                    class="text-white text-center font-['Clash_Display',sans-serif] text-[18px] mb-4 tracking-wide relative"
+                  >
+                    April
+                  </h4>
+                  <h3
+                    class="text-white font-bold text-[36px] font-['Clash_Display',sans-serif] mb-5 tracking-wide relative"
+                  >
+                    Design
+                  </h3>
+                  <p
+                    class="text-light-gray font-['Poppins',sans-serif] text-[14px] leading-[26px] relative"
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Elit massa erat
+                    vitae non semper quis. Morbi sed aliquet donec facilisis.
+                    Senectus eget.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item (Left) -->
+          <div
+            class="flex flex-col md:flex-row justify-between w-full relative group"
+          >
+            <div
+              class="w-full md:w-[calc(50%-60px)] pl-[60px] md:pl-0 flex justify-end"
+            >
+              <div class="w-full max-w-[500px] relative">
+                <!-- Glowing Half Border -->
+                <div
+                  class="absolute rounded-[18.46px] pointer-events-none"
+                  style="
+                    top: -14px;
+                    right: -14px;
+                    bottom: -14px;
+                    left: 0px;
+                    background: linear-gradient(
+                      270deg,
+                      #e5e0cf 0.12%,
+                      #cf9833 15%,
+                      rgba(238, 227, 188, 0) 65%
+                    );
+                    border-radius: 18.46px;
+                    padding: 6.92px;
+                    -webkit-mask:
+                      linear-gradient(#fff 0 0) content-box,
+                      linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    clip-path: inset(0 0 0 65%);
+                  "
+                ></div>
+                <!-- Card -->
+                <div
+                  class="rounded-[9.23px] bg-timeline-bg border-[1.15px] border-timeline-border p-[40px] relative backdrop-blur-md text-white"
+                >
+                  <h4
+                    class="text-white text-center font-['Clash_Display',sans-serif] text-[18px] mb-4 tracking-wide relative"
+                  >
+                    May
+                  </h4>
+                  <h3
+                    class="text-white font-bold text-[36px] font-['Clash_Display',sans-serif] mb-5 tracking-wide relative"
+                  >
+                    Testing
+                  </h3>
+                  <p
+                    class="text-light-gray font-['Poppins',sans-serif] text-[14px] leading-[26px] relative"
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Elit massa erat
+                    vitae non semper quis. Morbi sed aliquet donec facilisis.
+                    Senectus eget.
+                  </p>
+                </div>
+                <!-- Connector Line (Desktop) -->
+                <div
+                  class="hidden md:block absolute top-1/2 -translate-y-1/2 -right-[46px] w-[46px] border-t-[1px] border-dashed border-[#E2DDD0] opacity-50 -z-10"
+                ></div>
+              </div>
+            </div>
+            <!-- Center Dot -->
+            <div
+              class="absolute left-[24px] md:left-1/2 top-1/2 w-[27px] h-[27px] rounded-full bg-[#E4E0CF] shadow-[0_0_15px_#E4E0CF80] -translate-x-1/2 -translate-y-1/2 z-10"
+            ></div>
+            <!-- Spacer -->
+            <div class="hidden md:block w-full md:w-[calc(50%-60px)]"></div>
+          </div>
+
+          <!-- Item (Right) -->
+          <div
+            class="flex flex-col md:flex-row justify-between w-full relative group"
+          >
+            <!-- Spacer -->
+            <div class="hidden md:block w-full md:w-[calc(50%-60px)]"></div>
+            <!-- Center Dot -->
+            <div
+              class="absolute left-[24px] md:left-1/2 top-1/2 w-[27px] h-[27px] rounded-full bg-[#E08C3C] shadow-[0_0_15px_#E08C3C80] -translate-x-1/2 -translate-y-1/2 z-10"
+            ></div>
+            <!-- Content -->
+            <div
+              class="w-full md:w-[calc(50%-60px)] pl-[60px] md:pl-0 flex justify-start"
+            >
+              <div class="w-full max-w-[500px] relative">
+                <!-- Glowing Half Border -->
+                <div
+                  class="absolute rounded-[18.46px] pointer-events-none"
+                  style="
+                    top: -14px;
+                    left: -14px;
+                    bottom: -14px;
+                    right: 0px;
+                    background: linear-gradient(
+                      90deg,
+                      #e5e0cf 0.12%,
+                      #cf9833 15%,
+                      rgba(238, 227, 188, 0) 65%
+                    );
+                    border-radius: 18.46px;
+                    padding: 6.92px;
+                    -webkit-mask:
+                      linear-gradient(#fff 0 0) content-box,
+                      linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    clip-path: inset(0 65% 0 0);
+                  "
+                ></div>
+                <!-- Connector Line (Desktop) -->
+                <div
+                  class="hidden md:block absolute top-1/2 -translate-y-1/2 -left-[46px] w-[46px] border-t-[1px] border-dashed border-[#E08C3C] opacity-50 -z-10"
+                ></div>
+                <!-- Card -->
+                <div
+                  class="rounded-[9.23px] bg-timeline-bg border-[1.15px] border-timeline-border p-[40px] relative backdrop-blur-md text-white"
+                >
+                  <h4
+                    class="text-white text-center font-['Clash_Display',sans-serif] text-[18px] mb-4 tracking-wide relative"
+                  >
+                    June
+                  </h4>
+                  <h3
+                    class="text-white font-bold text-[36px] font-['Clash_Display',sans-serif] mb-5 tracking-wide relative"
+                  >
+                    Launch & Feedback
+                  </h3>
+                  <p
+                    class="text-light-gray font-['Poppins',sans-serif] text-[14px] leading-[26px] relative"
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Elit massa erat
+                    vitae non semper quis. Morbi sed aliquet donec facilisis.
+                    Senectus eget.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="relative bg-black py-20 px-8 md:px-20 overflow-hidden">
+      <!-- Background gradient accent -->
+      <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#DA8F4D]/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto relative z-10">
+        <!-- Section Title -->
+        <div class="text-center mb-20">
+          <h2 class="text-5xl md:text-6xl font-bold text-white mb-4">How It Works</h2>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          
+          <!-- Left Side: Image -->
+          <div class="flex justify-center items-center order-2 md:order-1">
+            <img 
+              src="assets/wallet.png" 
+              alt="Wallet with coins" 
+              class="w-full max-w-md h-auto object-contain"
+            />
+          </div>
+
+          <!-- Right Side: Content -->
+          <div class="order-1 md:order-2">
+            <!-- Decorative Star -->
+            <div class="inline-block mb-6">
+              <span class="text-4xl text-white drop-shadow-lg">✦</span>
+            </div>
+
+            <!-- Heading -->
+            <h3 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              Setup And Connect<br />Your Wallet.
+            </h3>
+
+            <!-- Description -->
+            <p class="text-gray-300 text-base leading-relaxed mb-8 max-w-md">
+              Lorem ipsum dolor sit amet consectetur. Ultrices in feugiat semper cursus elit pretium turpis vivamus. Dictumst eget vitae fermentum sagittis diam. Volutpat dignissim tortor ut tristique pellentesque vel pulvinar ipsum semper arcu. Sed odio.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Create Your Own Digital NFT Section -->
+    <section class="relative bg-black py-20 px-8 md:px-20 overflow-hidden">
+      <!-- Background gradient accent -->
+      <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#DA8F4D]/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto relative z-10">
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          
+          <!-- Left Side: Content -->
+          <div class="order-1 md:order-1">
+            <!-- Heading -->
+            <h3 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              Create Your Own<br />Digital NFT
+            </h3>
+
+            <!-- Description -->
+            <p class="text-gray-300 text-base leading-relaxed mb-8 max-w-md">
+              Lorem ipsum dolor sit amet consectetur. Donec vitae pellentesque turpis sed viverra tempus tortor. Habitant accumsan sagittis in facilisi placerat ac. Laoreet scelerisque viverra viverra ornare fermentum faucibus sit purus volutpat. Sed odio.
+            </p>
+
+            <!-- Decorative Star -->
+            <div class="inline-block">
+              <span class="text-4xl text-white drop-shadow-lg">✦</span>
+            </div>
+          </div>
+
+          <!-- Right Side: Image -->
+          <div class="flex justify-center items-center order-2 md:order-2">
+              <img 
+                src="assets/monkey.png" 
+                alt="Digital NFT Character" 
+                class="w-full max-w-sm h-auto object-contain"
+              />
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section class="relative bg-black py-20 px-8 md:px-20 overflow-hidden">
+      <!-- Background gradient accent -->
+      <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#DA8F4D]/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto relative z-10">
+
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          
+          <!-- Left Side: Image -->
+          <div class="flex justify-center items-center order-2 md:order-1">
+            <img 
+              src="assets/cheese.png" 
+              alt="Wallet with coins" 
+              class="w-full max-w-md h-auto object-contain"
+            />
+          </div>
+
+          <!-- Right Side: Content -->
+          <div class="order-1 md:order-2">
+            <!-- Decorative Star -->
+            <div class="inline-block mb-6">
+              <span class="text-4xl text-white drop-shadow-lg">✦</span>
+            </div>
+
+            <!-- Heading -->
+            <h3 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              Setup And Connect<br />Your Wallet.
+            </h3>
+
+            <!-- Description -->
+            <p class="text-gray-300 text-base leading-relaxed mb-8 max-w-md">
+              Lorem ipsum dolor sit amet consectetur. Ultrices in feugiat semper cursus elit pretium turpis vivamus. Dictumst eget vitae fermentum sagittis diam. Volutpat dignissim tortor ut tristique pellentesque vel pulvinar ipsum semper arcu. Sed odio.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
