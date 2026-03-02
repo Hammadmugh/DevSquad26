@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Notifications page</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Imperial+Script&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="notificationContainer">
+      <header>
+        <div class="notificationHeader">
+          <h1>Notifications</h1>
+          <span id="num-of-notif"></span>
+        </div>
+        <p id="mark-as-read">Mark all as read</p>
+      </header>
+      <main>
+        <div class="notificationCard unread">
+          <img src="assets/images/avatar-mark-webber.webp" alt="avatar-mark-webber">
+          <div class="description">
+            <p><b>Mark Webber</b> reacted to your recent post <span style="color: hsl(219, 12%, 42%);">My first tournament today!</span></p>
+            <p id="notif-time"><b>1m ago</b></p>
+          </div>
+        </div>
+        <div class="notificationCard unread">
+          <img src="assets/images/avatar-angela-gray.webp" alt="Angela">
+          <div class="description">
+            <p><b>Angela Gray</b> followed you</p>
+            <p id="notif-time"><b>5m ago</b></p>
+          </div>
+        </div>
+        <div class="notificationCard unread">
+          <img src="assets/images/avatar-jacob-thompson.webp" alt="Jacob">
+          <div class="description">
+            <p><b>Jacob Thompson</b> has joined your group <span style="color: hsl(219, 85%, 26%);"><b>Chess Club</b></span></p>
+            <p id="notif-time"><b>1day ago</b></p>
+          </div>
+        </div>
+        <div class="notificationCard">
+          <img src="assets/images/avatar-rizky-hasanuddin.webp" alt="Jacob">
+          <div class="description">
+            <p><b>Rizky Hasanuddin</b> sent you a private message</p>
+            <p id="notif-time"><b>5days ago</b></p>
+          </div>
+        </div>
+        <p class="message">Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+I'm already having lots of fun and improving my game.</p>
+        <div class="notificationCard">
+          <img src="assets/images/avatar-kimberly-smith.webp" alt="Jacob">
+          <div class="description"><p><b>Kimberly Smith</b> commented on your picture</p>
+
+            <p id="notif-time"><b>1week ago</b></p>
+          </div>
+          <img src="assets/images/image-chess.webp" alt=" image-chess">
+        </div>
+        <div class="notificationCard">
+          <img src="assets/images/avatar-nathan-peterson.webp" alt="Jacob">
+          <div class="description">
+            <p><b>Nathan Peterson</b> reacted to your recent post <span style="color: hsl(219, 12%, 42%);">5 end-game strategies to increase your win rate</span></p>
+            <p id="notif-time"><b>2weeks ago</b></p>
+          </div>
+        </div>
+        <div class="notificationCard">
+          <img src="assets/images/avatar-anna-kim.webp" alt="Jacob">
+          <div class="description">
+            <p><b>Anna Kim</b> left the group <span style="color: hsl(219, 85%, 26%);"><b>Chess Club</b></span></p>
+            <p id="notif-time"><b>2weeks ago</b></p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
