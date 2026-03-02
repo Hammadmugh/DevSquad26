@@ -68,6 +68,12 @@ main{
     padding: 1rem;
     border-radius: 1rem;
     position: relative;
+    transition: 0.6s ease;
+}
+
+.notificationCard:hover{
+    cursor: pointer;
+    background-color: paleturquoise;
 }
 
 .notificationCard img{
@@ -82,7 +88,7 @@ main{
 }
 
 .unread{
-    background-color: paleturquoise;
+    background-color: rgb(197, 231, 231);
 }
 
 .unread::after{
