@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Imperial+Script&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-[poppins] min-h-screen flex items-center justify-center bg-gray-300">
+    <div class="bg-white md:w-[600px] w-[360px] rounded-[1rem_1rem_10rem_1rem]">
+      <div class="md:p-[2rem] p-[1rem] flex flex-col">
+        <form class="flex flex-col">
+          <div class="flex md:gap-[2rem] mb-[5rem] md:mb-0 justify-between md:justify-start gap-0">
+            <div class="flex flex-col">
+              <label class="uppercase font-semibold" for="day"> Day </label>
+              <input class="w-[100px] p-2 rounded-lg border border-gray-300 flex items-center text-2xl placeholder:text-2xl placeholder:font-extrabold font-bold" type="number" id="day" placeholder="DD" />
+              <small class="text-red-500"></small>
+            </div>
+            <div class="flex flex-col">
+              <label class="uppercase font-semibold" for="month"> Month </label>
+              <input class="w-[100px] p-2 rounded-lg border border-gray-300 flex items-center text-2xl placeholder:text-2xl placeholder:font-extrabold font-bold" type="number" id="month" placeholder="MM" />
+              <small class="text-red-500"></small>
+            </div>
+            <div class="flex flex-col">
+              <label class="uppercase font-semibold" for="year"> Year </label>
+              <input class="w-[100px] p-2 rounded-lg border border-gray-300 flex items-center text-2xl  placeholder:text-2xl placeholder:font-extrabold font-bold" type="number" id="year" placeholder="YYYY" />
+              <small class="text-red-500"></small>
+            </div>
+          </div>
+          <div class="flex items-center relative md:static">
+            <hr class="w-full text-gray-300" />
+            <button class="rounded-full p-4 bg-purple-600 border-none cursor-pointer transition-colors duration-300 hover:bg-black flex items-center justify-center md:static absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:top-0 md:left-0 md:translate-x-0 md:translate-y-0" type="submit">
+              <img src="assets/images/icon-arrow.svg" alt="icon" />
+            </button>
+          </div>
+        </form>
+        <div class="mt-[5rem] md:mt-0">
+          <h1 class="md:text-[5rem] text-[3.5rem] font-extrabold italic h-fit"><span class="text-purple-600" id="YY">--</span>years</h1>
+          <h1 class="md:text-[5rem] text-[3.5rem] font-extrabold italic h-fit"><span class="text-purple-600" id="MM">--</span>months</h1>
+          <h1 class="md:text-[5rem] text-[3.5rem] font-extrabold italic h-fit"><span class="text-purple-600" id="DD">--</span> days</h1>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
