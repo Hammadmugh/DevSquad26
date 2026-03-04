@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: 'Poppins';
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cart Modal -->
+    <div
+      id="cartModal"
+      class="hidden fixed inset-0 bg-black/90 bg-opacity-50 z-50 flex justify-center items-center p-4"
+    >
+      <div class="w-full max-w-[1200px] max-h-[90vh] bg-white shadow-lg flex flex-col rounded-lg overflow-hidden">
+        <!-- Header Image -->
+        <div class="relative">
+          <img
+            src="assets/checkout-header-img.png"
+            alt="Checkout Header"
+            class="w-full h-28 sm:h-40 object-cover"
+          />
+          <button
+            onclick="closeCart()"
+            class="absolute top-2 right-2 bg-orange-500 text-white text-2xl font-bold w-10 h-10 rounded-full flex items-center justify-center hover:bg-orange-600"
+          >
+            ×
+          </button>
+        </div>
+
+        <!-- Cart Items -->
+        <div id="cartItemsList" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-3">
+          <!-- Cart items will be populated here -->
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="border-t border-gray-200 p-4 sm:p-6 space-y-4">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+            <button class="bg-orange-500 text-white font-bold py-2 px-4 rounded-lg whitespace-nowrap text-sm sm:text-base">
+              Total to pay <span id="totalPrice" class="ml-1">£0.00</span>
+            </button>
+            <p class="text-xs text-gray-600">
+              Delivery & Tax will be calculated in the next step
+            </p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex justify-between items-center pt-4">
+            <button
+              onclick="closeCart()"
+              class="text-blue-600 font-bold hover:text-blue-700 transition text-sm sm:text-base"
+            >
+              Take me back
+            </button>
+            <button
+              onclick="proceedCheckout()"
+              class="bg-green-500 text-white font-bold py-2 px-5 sm:py-3 sm:px-8 rounded-lg hover:bg-green-600 transition text-sm sm:text-base"
+            >
+              Next Step
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="bg-white">
+      <div class="max-w-full px-4 sm:px-8 lg:px-12 py-3">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <img
+              src="assets/LOGO 1.png"
+              alt="Order In Logo"
+              class="h-8 sm:h-12 w-auto"
+            />
+          </div>
+
+          <!-- Center Navigation Links — hidden on mobile -->
+          <div class="hidden md:flex items-center gap-6 lg:gap-12">
+            <a
+              href="#"
+              class="text-gray-800 text-sm lg:text-base font-normal hover:text-orange-500 transition"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="text-gray-800 text-sm lg:text-base font-normal hover:text-orange-500 transition"
+              >Special Offers</a
+            >
+            <button
+              class="bg-orange-500 text-white px-5 lg:px-8 py-2 lg:py-2.5 rounded-full hover:bg-orange-600 transition font-medium text-sm lg:text-base"
+            >
+              Restaurants
+            </button>
+            <a
+              href="#"
+              class="text-gray-800 text-sm lg:text-base font-normal hover:text-orange-500 transition"
+              >Track Order</a
+            >
+          </div>
+
+          <!-- Cart Icon -->
+          <div
+            class="flex items-center gap-2 cursor-pointer"
+            onclick="openCart()"
+          >
+            <div
+              class="bg-gray-900 rounded-full w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center cursor-pointer hover:bg-gray-800 transition"
+            >
+              <svg
+                class="w-5 h-5 sm:w-7 sm:h-7 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+                />
+              </svg>
+            </div>
+            <span class="text-gray-900 font-medium text-sm sm:text-base">Cart</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative mx-0 sm:mx-6 lg:mx-[100px] rounded-none sm:rounded-lg"
+      style="
+        background-image: url(assets/header-bg-image.png);
+        background-size: cover;
+        background-position: center;
+        min-height: 260px;
+      "
+    >
+      <div class="absolute inset-0 bg-[#03081FE5] overflow-hidden rounded-none sm:rounded-lg"></div>
+
+      <div
+        class="relative max-w-full px-5 sm:px-8 lg:px-12 py-8 sm:py-12 flex items-center justify-between h-full"
+      >
+        <!-- Left Content -->
+        <div class="flex flex-col justify-between h-60 sm:h-80 z-10 w-full sm:w-auto">
+          <div class="max-w-xl">
+            <p class="text-white text-xs sm:text-sm font-light mb-2 sm:mb-3">I'm lovin' it!</p>
+            <h1 class="text-white text-2xl sm:text-4xl font-bold mb-4 sm:mb-8">
+              McDonald's East London
+            </h1>
+
+            <!-- Info Boxes -->
+            <div class="flex flex-wrap gap-3 sm:gap-6 mb-8 sm:mb-12">
+              <div
+                class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-4xl border border-white"
+              >
+                <img src="assets/Order Completed.png" alt="Minimum Order" class="w-4 h-4 sm:w-6 sm:h-6" />
+                <span class="text-white text-xs sm:text-sm font-medium">Minimum Order: 12 GBP</span>
+              </div>
+              <div
+                class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-4xl border border-white"
+              >
+                <img src="assets/Clock.png" alt="Delivery" class="w-4 h-4 sm:w-6 sm:h-6" />
+                <span class="text-white text-xs sm:text-sm font-medium">Delivery in 30-25 Minutes</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Badge -->
+          <div
+            class="absolute -bottom-6 left-0 bg-orange-500 px-4 sm:px-6 py-2 sm:py-3 rounded-lg w-fit flex items-center gap-2 shadow-lg z-20"
+          >
+            <img src="assets/Clock.png" alt="Open" class="w-4 h-4 sm:w-5 sm:h-5" />
+            <span class="text-white font-semibold text-xs sm:text-sm">Open until 2:00 am</span>
+          </div>
+        </div>
+
+        <!-- Right Side — hidden on small screens -->
+        <div class="hidden sm:flex relative items-center justify-end h-80 z-10">
+          <div class="relative">
+            <img
+              src="assets/side-burger-bg-img.png"
+              alt="McDonald's Food"
+              class="h-60 lg:h-80 object-contain"
+            />
+            <div class="absolute bottom-[-20px] left-[-70px]">
+              <img
+                src="assets/rating.png"
+                alt="rating"
+                class="w-32 lg:w-40 h-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="px-4 sm:px-8 lg:px-[162px] py-8 mt-10">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+        <div>
+          <h2 class="text-lg sm:text-2xl font-bold text-gray-900">
+            All Offers from McDonald's East London
+          </h2>
+        </div>
+
+        <!-- Search Box -->
+        <div class="relative w-full sm:w-64">
+          <div
+            class="flex items-center bg-white border border-[#03081F] rounded-full px-4 sm:px-5 py-2 sm:py-3 shadow-sm"
+          >
+            <img src="assets/Search.png" alt="Search" />
+            <input
+              type="text"
+              placeholder="Search from menu..."
+              class="w-full outline-none text-gray-700 bg-transparent ml-3 sm:ml-6 text-sm placeholder-[#03081F]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Menu Bar -->
+    <section class="bg-orange-500 w-full py-3 sm:py-4 px-0 sm:px-4 lg:px-[95px] overflow-x-auto">
+      <div class="px-4 sm:px-12 flex items-center gap-4 sm:gap-0 sm:justify-between min-w-max sm:min-w-0">
+        <button
+          class="bg-gray-900 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-bold text-sm sm:text-[21px] whitespace-nowrap hover:bg-gray-800 transition"
+        >
+          Offers
+        </button>
+        <a href="#" class="text-white font-bold text-sm sm:text-[21px] whitespace-nowrap hover:text-gray-100 transition sm:mx-0 mx-1">Burgers</a>
+        <a href="#" class="text-white font-bold text-sm sm:text-[21px] whitespace-nowrap hover:text-gray-100 transition mx-1 sm:mx-0">Fries</a>
+        <a href="#" class="text-white font-bold text-sm sm:text-[21px] whitespace-nowrap hover:text-gray-100 transition mx-1 sm:mx-0">Snacks</a>
+        <a href="#" class="text-white font-bold text-sm sm:text-[21px] whitespace-nowrap hover:text-gray-100 transition mx-1 sm:mx-0">Salads</a>
+        <a href="#" class="text-white font-bold text-sm sm:text-[21px] whitespace-nowrap hover:text-gray-100 transition mx-1 sm:mx-0">Cold drinks</a>
+        <a href="#" class="text-white font-bold text-sm sm:text-[21px] whitespace-nowrap hover:text-gray-100 transition mx-1 sm:mx-0">Happy Meal</a>
+        <a href="#" class="text-white font-bold text-sm sm:text-[21px] whitespace-nowrap hover:text-gray-100 transition mx-1 sm:mx-0">Desserts</a>
+        <a href="#" class="text-white font-bold text-sm sm:text-[21px] whitespace-nowrap hover:text-gray-100 transition mx-1 sm:mx-0">Hot drinks</a>
+        <a href="#" class="text-white font-bold text-sm sm:text-[21px] whitespace-nowrap hover:text-gray-100 transition mx-1 sm:mx-0">Sauces</a>
+        <a href="#" class="text-white font-bold text-sm sm:text-[21px] whitespace-nowrap hover:text-gray-100 transition mx-1 sm:mx-0">Orbit</a>
+      </div>
+    </section>
+
+    <!-- Burgers Section -->
+    <section class="px-4 sm:px-8 lg:px-[100px] py-8 sm:py-12 bg-gray-50">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Burgers</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Product Card 1 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 5 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 6 -->
+        <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fries Section -->
+    <section class="px-4 sm:px-8 lg:px-[100px] py-8 sm:py-12 bg-gray-50">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#FC8A06] mb-6 sm:mb-8">Fries</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="product-card-fries bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name-fries text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description-fries text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price-fries text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image-fries object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn-fries absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card-fries bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name-fries text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description-fries text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price-fries text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image-fries object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn-fries absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card-fries bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name-fries text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description-fries text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price-fries text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image-fries object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn-fries absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card-fries bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name-fries text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description-fries text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price-fries text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image-fries object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn-fries absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card-fries bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name-fries text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description-fries text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price-fries text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image-fries object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn-fries absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card-fries bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name-fries text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description-fries text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price-fries text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image-fries object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn-fries absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cold Drinks Section -->
+    <section class="px-4 sm:px-8 lg:px-[100px] py-8 sm:py-12 bg-gray-50">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#FC8A06] mb-6 sm:mb-8">Cold Drinks</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="product-card-drinks bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name-drinks text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description-drinks text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price-drinks text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image-drinks object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn-drinks absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card-drinks bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name-drinks text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description-drinks text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price-drinks text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image-drinks object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn-drinks absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card-drinks bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name-drinks text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description-drinks text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price-drinks text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image-drinks object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn-drinks absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card-drinks bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name-drinks text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description-drinks text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price-drinks text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image-drinks object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn-drinks absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card-drinks bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name-drinks text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description-drinks text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price-drinks text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image-drinks object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn-drinks absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card-drinks bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+          <div class="flex h-44 sm:h-56">
+            <div class="p-3 sm:p-4 flex flex-col justify-between flex-1 bg-white">
+              <div>
+                <h3 class="product-name-drinks text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2"></h3>
+                <p class="product-description-drinks text-gray-700 text-xs mb-3 sm:mb-4"></p>
+              </div>
+              <div class="product-price-drinks text-lg sm:text-xl font-bold text-gray-900"></div>
+            </div>
+            <div class="relative p-3 sm:p-4 flex items-center justify-center">
+              <div class="relative w-fit">
+                <img src="" alt="" class="product-image-drinks object-contain w-32 sm:w-40" />
+                <button class="add-to-cart-btn-drinks absolute bottom-0 right-0 bg-white/90 rounded-[2rem_0_1rem_0] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center cursor-pointer">
+                  <img src="assets/Plus.png" alt="" class="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Information Section -->
+    <section class="px-4 sm:px-8 lg:px-[100px] py-8 sm:py-12 bg-white">
+      <div class="rounded-2xl overflow-hidden shadow-lg">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
+          <!-- Delivery Information -->
+          <div class="bg-[#FBFBFB] p-5 sm:p-8">
+            <div class="flex items-center gap-3 mb-4 sm:mb-6">
+              <img src="assets/deliveryInfo.png" alt="deliveryInfo" />
+              <h3 class="text-base sm:text-xl font-bold text-gray-900">Delivery information</h3>
+            </div>
+            <div class="space-y-2 sm:space-y-3 text-sm">
+              <div><span class="font-bold text-gray-900">Monday:</span> <span class="text-gray-700">12:00 AM - 3:00 AM, 8:00 AM - 3:00 AM</span></div>
+              <div><span class="font-bold text-gray-900">Tuesday:</span> <span class="text-gray-700">8:00 AM - 3:00 AM</span></div>
+              <div><span class="font-bold text-gray-900">Wednesday:</span> <span class="text-gray-700">8:00 AM - 3:00 AM</span></div>
+              <div><span class="font-bold text-gray-900">Thursday:</span> <span class="text-gray-700">8:00 AM - 3:00 AM</span></div>
+              <div><span class="font-bold text-gray-900">Friday:</span> <span class="text-gray-700">8:00 AM - 3:00 AM</span></div>
+              <div><span class="font-bold text-gray-900">Saturday:</span> <span class="text-gray-700">8:00 AM - 3:00 AM</span></div>
+              <div><span class="font-bold text-gray-900">Sunday:</span> <span class="text-gray-700">8:00 AM - 12:00 AM</span></div>
+              <div class="pt-4 border-t border-gray-300">
+                <span class="font-bold text-gray-900">Estimated time until delivery:</span>
+                <span class="text-gray-700 ml-2">20 min</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="bg-[#FBFBFB] p-5 sm:p-8 border-t sm:border-t-0 sm:border-l border-gray-200">
+            <div class="flex items-center gap-3 mb-4 sm:mb-6">
+              <img src="assets/contactInfo.png" alt="contactInfo" />
+              <h3 class="text-base sm:text-xl font-bold text-gray-900">Contact information</h3>
+            </div>
+            <div class="space-y-4 sm:space-y-6 text-sm">
+              <p class="text-gray-700 leading-relaxed">If you have allergies or other dietary restrictions, please contact the restaurant. The restaurant will provide food-specific information upon request.</p>
+              <div>
+                <p class="font-bold text-gray-900 mb-1 sm:mb-2">Phone number</p>
+                <p class="text-gray-700">+934443-43</p>
+              </div>
+              <div>
+                <p class="font-bold text-gray-900 mb-1 sm:mb-2">Website</p>
+                <p class="text-gray-700 hover:underline"><a href="#">http://mcdonalds.uk/</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Operational Times -->
+          <div class="bg-slate-900 text-white p-5 sm:p-8 border-t lg:border-t-0 border-gray-700">
+            <div class="flex items-center gap-3 mb-4 sm:mb-6">
+              <img src="assets/operationalTimes.png" alt="operationalTimes" />
+              <h3 class="text-base sm:text-xl font-bold text-white">Operational Times</h3>
+            </div>
+            <div class="space-y-2 sm:space-y-3 text-sm">
+              <div><span class="font-bold text-white">Monday:</span> <span class="text-gray-300 ml-2">8:00 AM - 3:00 AM</span></div>
+              <div><span class="font-bold text-white">Tuesday:</span> <span class="text-gray-300 ml-2">8:00 AM - 3:00 AM</span></div>
+              <div><span class="font-bold text-white">Wednesday:</span> <span class="text-gray-300 ml-2">8:00 AM - 3:00 AM</span></div>
+              <div><span class="font-bold text-white">Thursday:</span> <span class="text-gray-300 ml-2">8:00 AM - 3:00 AM</span></div>
+              <div><span class="font-bold text-white">Friday:</span> <span class="text-gray-300 ml-2">8:00 AM - 3:00 AM</span></div>
+              <div><span class="font-bold text-white">Saturday:</span> <span class="text-gray-300 ml-2">8:00 AM - 3:00 AM</span></div>
+              <div><span class="font-bold text-white">Sunday:</span> <span class="text-gray-300 ml-2">8:00 AM - 3:00 AM</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Know More About Us Section -->
+    <section class="px-4 sm:px-8 lg:px-[100px] py-10 sm:py-16 bg-gray-100">
+      <!-- Header with Title and Tabs -->
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 sm:mb-12">
+        <h2 class="text-3xl sm:text-5xl font-bold text-gray-900">Know more about us!</h2>
+
+        <!-- Tab Navigation -->
+        <div class="flex flex-wrap items-center gap-3 sm:gap-6">
+          <button class="px-4 sm:px-6 py-2 sm:py-3 rounded-full border-2 border-orange-500 text-gray-900 font-bold hover:bg-orange-50 transition text-sm sm:text-base">
+            Frequent Questions
+          </button>
+          <button class="text-gray-900 font-bold text-sm sm:text-lg hover:text-orange-500 transition">Who we are?</button>
+          <button class="text-gray-900 font-bold text-sm sm:text-lg hover:text-orange-500 transition">Partner Program</button>
+          <button class="text-gray-900 font-bold text-sm sm:text-lg hover:text-orange-500 transition">Help & Support</button>
+        </div>
+      </div>
+
+      <!-- Content Section -->
+      <div class="bg-slate-900 rounded-3xl overflow-hidden">
+        <div class="flex flex-col lg:flex-row gap-8 sm:gap-12 p-6 sm:p-12">
+          <!-- Left Side - Questions -->
+          <div class="w-full lg:w-1/3">
+            <button class="bg-orange-500 text-gray-900 font-bold px-5 sm:px-6 py-2 sm:py-3 rounded-full mb-6 sm:mb-8 hover:bg-orange-600 transition text-sm sm:text-base">
+              How does Order.UK work?
+            </button>
+            <div class="space-y-4 sm:space-y-6">
+              <h4 class="text-white font-bold text-base sm:text-lg cursor-pointer hover:text-orange-500 transition">What payment methods are accepted?</h4>
+              <h4 class="text-white font-bold text-base sm:text-lg cursor-pointer hover:text-orange-500 transition">Can I track my order in real-time?</h4>
+              <h4 class="text-white font-bold text-base sm:text-lg cursor-pointer hover:text-orange-500 transition">Are there any special discounts or promotions available?</h4>
+              <h4 class="text-white font-bold text-base sm:text-lg cursor-pointer hover:text-orange-500 transition">Is Order.UK available in my area?</h4>
+            </div>
+          </div>
+
+          <!-- Right Side - Steps -->
+          <div class="w-full lg:w-2/3">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+              <div class="bg-gray-200 rounded-2xl p-4 sm:p-6">
+                <h4 class="text-gray-900 font-bold text-base sm:text-lg mb-3">Place an Order!</h4>
+                <div class="flex justify-center mb-4">
+                  <img src="assets/order-food.png" alt="order-food" />
+                </div>
+                <p class="text-gray-900 text-center text-sm">Place order through our website or Mobile app</p>
+              </div>
+              <div class="bg-gray-200 rounded-2xl p-4 sm:p-6">
+                <h4 class="text-gray-900 font-bold text-base sm:text-lg mb-3">Track Progress</h4>
+                <div class="flex justify-center mb-4 h-28 sm:h-32">
+                  <img src="assets/track-food.png" alt="track" />
+                </div>
+                <p class="text-gray-900 text-center text-sm">Your can track your order status with delivery time</p>
+              </div>
+              <div class="bg-gray-200 rounded-2xl p-4 sm:p-6">
+                <h4 class="text-gray-900 font-bold text-base sm:text-lg mb-3">Get your Order!</h4>
+                <div class="flex justify-center mb-4 h-28 sm:h-32">
+                  <img src="assets/get-your-order.png" alt="Get" />
+                </div>
+                <p class="text-gray-900 text-center text-sm">Receive your order at a lighting fast speed!</p>
+              </div>
+            </div>
+            <div class="px-4 sm:px-12 py-6 sm:py-8 text-center">
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Order.UK simplifies the food ordering process. Browse through our diverse menu, select your favorite dishes, and proceed to checkout. Your delicious meal will be on its way to your doorstep in no time!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="w-full bg-white">
+      <!-- Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-[#D9D9D9] px-4 sm:px-8 lg:px-[100px] py-8 sm:py-10 gap-4">
+        <h2 class="text-3xl sm:text-5xl font-bold text-gray-900">Customer Reviews</h2>
+        <div class="flex gap-4">
+          <button class="bg-orange-500 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center hover:bg-orange-600 transition">
+            <img src="assets/Back.png" alt="back" />
+          </button>
+          <button class="bg-orange-500 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center hover:bg-orange-600 transition">
+            <img class="rotate-180" src="assets/Back.png" alt="back" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Review Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 bg-[#D9D9D9] px-4 sm:px-8 lg:px-[100px] py-10 sm:py-16">
+        <!-- Review Card 1 -->
+        <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-md hover:shadow-lg transition">
+          <div class="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <img src="assets/customer-review.png" alt="St Glx" class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0" />
+            <div class="flex justify-between w-full">
+              <div class="flex flex-col">
+                <h4 class="font-bold text-gray-900 text-base sm:text-lg">St Glx</h4>
+                <span class="text-orange-500 font-bold text-xs sm:text-sm">South London</span>
+              </div>
+              <div class="flex flex-col items-end">
+                <div class="flex gap-1">
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                </div>
+                <div class="flex items-center gap-1 sm:gap-2 text-gray-600 text-xs sm:text-sm mt-1">
+                  <img src="assets/Time Span.png" alt="time" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  24th September, 2023
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 text-xs sm:text-sm leading-relaxed">
+            The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly, the staff was friendly, and the food was up to the usual McDonald's standard - hot and satisfying.
+          </p>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-md hover:shadow-lg transition">
+          <div class="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <img src="assets/customer-review.png" alt="St Glx" class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0" />
+            <div class="flex justify-between w-full">
+              <div class="flex flex-col">
+                <h4 class="font-bold text-gray-900 text-base sm:text-lg">St Glx</h4>
+                <span class="text-orange-500 font-bold text-xs sm:text-sm">South London</span>
+              </div>
+              <div class="flex flex-col items-end">
+                <div class="flex gap-1">
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                </div>
+                <div class="flex items-center gap-1 sm:gap-2 text-gray-600 text-xs sm:text-sm mt-1">
+                  <img src="assets/Time Span.png" alt="time" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  24th September, 2023
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 text-xs sm:text-sm leading-relaxed">
+            The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly, the staff was friendly, and the food was up to the usual McDonald's standard - hot and satisfying.
+          </p>
+        </div>
+
+        <!-- Review Card 3 -->
+        <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-md hover:shadow-lg transition">
+          <div class="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <img src="assets/customer-review.png" alt="St Glx" class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0" />
+            <div class="flex justify-between w-full">
+              <div class="flex flex-col">
+                <h4 class="font-bold text-gray-900 text-base sm:text-lg">St Glx</h4>
+                <span class="text-orange-500 font-bold text-xs sm:text-sm">South London</span>
+              </div>
+              <div class="flex flex-col items-end">
+                <div class="flex gap-1">
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  <img src="assets/Star.png" alt="star" class="w-3 h-3 sm:w-4 sm:h-4" />
+                </div>
+                <div class="flex items-center gap-1 sm:gap-2 text-gray-600 text-xs sm:text-sm mt-1">
+                  <img src="assets/Time Span.png" alt="time" class="w-3 h-3 sm:w-4 sm:h-4" />
+                  24th September, 2023
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 text-xs sm:text-sm leading-relaxed">
+            The positive aspect was undoubtedly the efficiency of the service. The queue moved quickly, the staff was friendly, and the food was up to the usual McDonald's standard - hot and satisfying.
+          </p>
+        </div>
+      </div>
+
+      <!-- Overall Rating Summary -->
+      <div class="flex justify-center items-center px-4 sm:px-8 lg:px-[100px] py-10 sm:py-12" style="background: linear-gradient(to bottom, #D9D9D9 0%, #D9D9D9 50%, white 50%, white 100%);">
+        <img src="assets/rating.png" alt="rating" class="max-w-full" />
+      </div>
+    </section>
+
+    <!-- Similar Restaurants Section -->
+    <section class="px-4 sm:px-8 lg:px-[100px] py-10 sm:py-16 bg-white">
+      <h2 class="text-2xl sm:text-4xl font-bold text-gray-900 mb-6 sm:mb-10">Similar Restaurants</h2>
+
+      <div class="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6">
+        <div class="group cursor-pointer w-fit">
+          <div class="rounded-t-2xl flex items-center justify-center overflow-hidden hover:shadow-lg transition">
+            <img src="assets/company-logo-1.png" alt="McDonald's" class="object-contain" />
+          </div>
+          <div class="bg-orange-500 rounded-b-2xl py-2 px-2 sm:py-3 sm:px-4 text-center">
+            <h4 class="text-white font-bold text-xs sm:text-sm">McDonald's London</h4>
+          </div>
+        </div>
+        <div class="group cursor-pointer w-fit">
+          <div class="rounded-t-2xl flex items-center justify-center overflow-hidden hover:shadow-lg transition">
+            <img src="assets/company-logo-2.png" alt="Papa Johns" class="object-contain" />
+          </div>
+          <div class="bg-orange-500 rounded-b-2xl py-2 px-2 sm:py-3 sm:px-4 text-center">
+            <h4 class="text-white font-bold text-xs sm:text-sm">Papa Johns</h4>
+          </div>
+        </div>
+        <div class="group cursor-pointer w-fit">
+          <div class="rounded-t-2xl flex items-center justify-center overflow-hidden hover:shadow-lg transition">
+            <img src="assets/company-logo-3.png" alt="KFC" class="object-contain" />
+          </div>
+          <div class="bg-orange-500 rounded-b-2xl py-2 px-2 sm:py-3 sm:px-4 text-center">
+            <h4 class="text-white font-bold text-xs sm:text-sm">KFC West London</h4>
+          </div>
+        </div>
+        <div class="group cursor-pointer w-fit">
+          <div class="rounded-t-2xl flex items-center justify-center overflow-hidden hover:shadow-lg transition">
+            <img src="assets/company-logo-4.png" alt="Texas Chicken" class="object-contain" />
+          </div>
+          <div class="bg-orange-500 rounded-b-2xl py-2 px-2 sm:py-3 sm:px-4 text-center">
+            <h4 class="text-white font-bold text-xs sm:text-sm">Texas Chicken</h4>
+          </div>
+        </div>
+        <div class="group cursor-pointer w-fit">
+          <div class="rounded-t-2xl flex items-center justify-center overflow-hidden hover:shadow-lg transition">
+            <img src="assets/company-logo-5.png" alt="Burger King" class="object-contain" />
+          </div>
+          <div class="bg-orange-500 rounded-b-2xl py-2 px-2 sm:py-3 sm:px-4 text-center">
+            <h4 class="text-white font-bold text-xs sm:text-sm">Burger King</h4>
+          </div>
+        </div>
+        <div class="group cursor-pointer w-fit">
+          <div class="rounded-t-2xl flex items-center justify-center overflow-hidden hover:shadow-lg transition">
+            <img src="assets/company-logo-6.png" alt="Shaurma1" class="object-contain" />
+          </div>
+          <div class="bg-orange-500 rounded-b-2xl py-2 px-2 sm:py-3 sm:px-4 text-center">
+            <h4 class="text-white font-bold text-xs sm:text-sm">Shaurma1</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="w-full bg-gray-200">
+      <!-- Top Footer -->
+      <div class="px-4 sm:px-8 lg:px-[100px] py-10 sm:py-16">
+        <div class="flex flex-col sm:flex-row flex-wrap gap-8 sm:gap-12 lg:gap-20">
+          <!-- Column 1: Logo and App Links -->
+          <div>
+            <img src="assets/LOGO 2.png" alt="Logo" />
+            <div class="flex mb-5 mt-6">
+              <a href="#" class="w-36 h-12 sm:w-[180.5px] sm:h-[53px] flex items-center justify-center bg-white rounded-lg">
+                <img src="assets/appStore.png" alt="App Store" class="object-contain" />
+              </a>
+              <a href="#" class="w-36 h-12 sm:w-[180.5px] sm:h-[53px] flex items-center justify-center bg-white rounded-lg">
+                <img src="assets/playstore.png" alt="Google Play" class="object-contain" />
+              </a>
+            </div>
+            <p class="text-gray-700 text-xs sm:text-sm">Company # 490039-445, Registered with House of companies.</p>
+          </div>
+
+          <!-- Column 2: Email Subscription -->
+          <div>
+            <h4 class="text-gray-900 font-bold text-base sm:text-lg mb-4 sm:mb-6">Get Exclusive Deals in your Inbox</h4>
+            <div class="flex gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <input type="email" placeholder="youremail@gmail.com" class="flex-1 bg-gray-400 bg-opacity-40 rounded-full px-4 sm:px-5 py-2 sm:py-3 text-gray-700 placeholder-gray-600 focus:outline-none text-sm" />
+              <button class="bg-orange-500 text-white font-bold px-4 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-orange-600 transition whitespace-nowrap text-sm">Subscribe</button>
+            </div>
+            <p class="text-gray-700 text-xs mb-4 sm:mb-6">we wont spam, read our <a href="#" class="underline hover:text-gray-900">email policy</a></p>
+            <div class="flex gap-3 sm:gap-4">
+              <a href="#" class="text-white rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-gray-800 transition">
+                <img src="assets/Facebook.png" alt="Facebook" />
+              </a>
+              <a href="#" class="text-white rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-gray-800 transition">
+                <img src="assets/Instagram.png" alt="Instagram" />
+              </a>
+              <a href="#" class="text-white rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-gray-800 transition">
+                <img src="assets/TikTok.png" alt="TikTok" />
+              </a>
+              <a href="#" class="text-white rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-gray-800 transition">
+                <img src="assets/Snapchat.png" alt="snap" />
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 3: Legal Pages -->
+          <div>
+            <h4 class="text-gray-900 font-bold text-base sm:text-lg mb-4 sm:mb-6">Legal Pages</h4>
+            <ul class="space-y-2 sm:space-y-3">
+              <li><a href="#" class="text-gray-700 hover:text-gray-900 underline text-xs sm:text-sm">Terms and conditions</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-gray-900 underline text-xs sm:text-sm">Privacy</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-gray-900 underline text-xs sm:text-sm">Cookies</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-gray-900 underline text-xs sm:text-sm">Modern Slavery Statement</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Important Links -->
+          <div>
+            <h4 class="text-gray-900 font-bold text-base sm:text-lg mb-4 sm:mb-6">Important Links</h4>
+            <ul class="space-y-2 sm:space-y-3">
+              <li><a href="#" class="text-gray-700 hover:text-gray-900 underline text-xs sm:text-sm">Get help</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-gray-900 underline text-xs sm:text-sm">Add your restaurant</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-gray-900 underline text-xs sm:text-sm">Sign up to deliver</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-gray-900 underline text-xs sm:text-sm">Create a business account</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Footer -->
+      <div class="bg-gray-900 px-4 sm:px-8 lg:px-[100px] py-4 sm:py-6">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
+          <p class="text-gray-400 text-xs sm:text-sm">Order.uk Copyright 2025, All Rights Reserved.</p>
+          <div class="flex flex-wrap items-center gap-4 sm:gap-8">
+            <a href="#" class="text-gray-400 hover:text-white text-xs sm:text-sm transition">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-xs sm:text-sm transition">Terms</a>
+            <a href="#" class="text-gray-400 hover:text-white text-xs sm:text-sm transition">Pricing</a>
+            <a href="#" class="text-gray-400 hover:text-white text-xs sm:text-sm transition">Do not sell or share my personal information</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="src/products.js"></script>
+  </body>
+</html>
