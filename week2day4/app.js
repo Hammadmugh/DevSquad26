@@ -1,6 +1,6 @@
 const billAmount = document.getElementById("bill");
 const numberOfPeople = document.getElementById("people");
-const customTipPercentage = document.getElementById("custom");
+const customTipPercentage = document.querySelectorAll(".custom-tip");
 const billTipAmount = document.getElementById("tipAmount");
 const billTotalPerPerson = document.getElementById("total");
 const resetButton = document.getElementById("resetBtn");
@@ -24,22 +24,29 @@ buttons.forEach((button) => {
 });
 
 //Calculate Tip When User Give Custom Tip Percentage Input
-customTipPercentage.addEventListener("blur", (e) => {
-  if (billAmount.value === "") {
-    resetEverything();
-    return;
-  }
-  if (numberOfPeople.value === "") numberOfPeople.value = 1;
+customTipPercentage.forEach((input) => {
+  input.addEventListener("blur", (e) => {
 
-  calculateTip(
-    parseFloat(billAmount.value),
-    parseFloat(e.target.value),
-    parseInt(numberOfPeople.value)
-  );
+    if (billAmount.value === "") {
+      resetEverything();
+      return;
+    }
+
+    if (numberOfPeople.value === "") numberOfPeople.value = 1;
+
+    calculateTip(
+      parseFloat(billAmount.value),
+      parseFloat(e.target.value),
+      parseInt(numberOfPeople.value)
+    );
+
+  });
 });
 
 //Calculate Tip
 function calculateTip(billAmount, tipPercentage, numberOfPeople) {
+
+  
   let tipAmount = (billAmount * (tipPercentage / 100)) / numberOfPeople;
   let tip = Math.floor(tipAmount * 100) / 100;
   tip = tip.toFixed(2);
