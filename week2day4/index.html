@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="stylesheet" href="src/output.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Space Mono";
+      }
+    </style>
+  </head>
+
+  <!-- body -->
+  <body
+    class="min-h-screen flex items-center justify-center flex-col bg-[hsl(185,41%,84%)] gap-16"
+  >
+    <!-- title -->
+    <h1 class="text-[hsl(183,100%,15%)] uppercase tracking-[3px]">
+      Spli <br />tter
+    </h1>
+
+    <!-- card -->
+    <div class="bg-white w-[700px] rounded-2xl max-w-full">
+      <!-- card-container -->
+      <div class="flex p-8 gap-8 flex-col md:flex-row">
+        <!-- inputs-section -->
+        <div class="w-full md:w-1/2 flex flex-col gap-8">
+          <!-- bill-sec -->
+          <div class="flex flex-col gap-2">
+            <label class="text-[hsl(183,100%,15%)] text-sm">Bill</label>
+            <div class="relative">
+              <input
+              id="bill"
+              placeholder="0"
+                type="number"
+                class="w-full text-right px-2 py-2 border-none text-xl text-[hsl(183,100%,15%)] bg-[hsl(189,41%,97%)] outline outline-[hsl(172,67%,45%)] rounded"
+              />
+              <img
+                src="images/icon-dollar.svg"
+                class="absolute top-1/2 left-[5%] -translate-x-1/2 -translate-y-1/2"
+              />
+            </div>
+          </div>
+
+          <!-- tip-sec -->
+          <div class="flex flex-col gap-2">
+            <label class="text-[hsl(183,100%,15%)] text-sm">Select Tip %</label>
+
+            <!-- tip-btns -->
+            <div class="tip-btns flex flex-col gap-4 w-full md:flex-row md:flex-wrap">
+              <!-- On mobile: two columns via a wrapper div -->
+              <div class="flex flex-col gap-4 md:hidden">
+                <!-- row 1 -->
+                <div class="flex justify-between gap-4">
+                  <button
+                    class="w-[130px] md:w-[90px] text-white bg-[hsl(183,100%,15%)] border-none py-2 cursor-pointer rounded-lg text-lg hover:bg-[hsl(172,67%,45%)] hover:text-[hsl(183,100%,15%)]"
+                  >
+                    5%
+                  </button>
+                  <button
+                    class="w-[130px] md:w-[90px] text-white bg-[hsl(183,100%,15%)] border-none py-2 cursor-pointer rounded-lg text-lg hover:bg-[hsl(172,67%,45%)] hover:text-[hsl(183,100%,15%)]"
+                  >
+                    10%
+                  </button>
+                </div>
+                <!-- row 2 -->
+                <div class="flex justify-between gap-4">
+                  <button
+                    class="w-[130px] md:w-[90px] text-white bg-[hsl(183,100%,15%)] border-none py-2 cursor-pointer rounded-lg text-lg hover:bg-[hsl(172,67%,45%)] hover:text-[hsl(183,100%,15%)]"
+                  >
+                    15%
+                  </button>
+                  <button
+                    class="w-[130px] md:w-[90px] text-white bg-[hsl(183,100%,15%)] border-none py-2 cursor-pointer rounded-lg text-lg hover:bg-[hsl(172,67%,45%)] hover:text-[hsl(183,100%,15%)]"
+                  >
+                    25%
+                  </button>
+                </div>
+                <!-- row 3 -->
+                <div class="flex justify-between gap-4">
+                  <button
+                    class="w-[130px] md:w-[90px] text-white bg-[hsl(183,100%,15%)] border-none py-2 cursor-pointer rounded-lg text-lg hover:bg-[hsl(172,67%,45%)] hover:text-[hsl(183,100%,15%)]"
+                  >
+                    50%
+                  </button>
+                  <input
+                    type="number"
+                    placeholder="Custom"
+                    class="w-[130px] md:w-[90px] py-2 text-center text-base border-none bg-[hsl(189,41%,97%)] rounded-lg outline outline-[hsl(172,67%,45%)]"
+                  />
+                </div>
+              </div>
+
+              <!-- Desktop: original flex layout -->
+              <div class="hidden md:grid md:grid-cols-3 gap-4">
+                <button
+                  class="text-white bg-[hsl(183,100%,15%)] py-2 rounded-lg text-lg hover:bg-[hsl(172,67%,45%)] hover:text-[hsl(183,100%,15%)]"
+                >
+                  5%
+                </button>
+
+                <button
+                  class="text-white bg-[hsl(183,100%,15%)] py-2 rounded-lg text-lg hover:bg-[hsl(172,67%,45%)] hover:text-[hsl(183,100%,15%)]"
+                >
+                  10%
+                </button>
+
+                <button
+                  class="text-white bg-[hsl(183,100%,15%)] py-2 rounded-lg text-lg hover:bg-[hsl(172,67%,45%)] hover:text-[hsl(183,100%,15%)]"
+                >
+                  15%
+                </button>
+
+                <button
+                  class="text-white bg-[hsl(183,100%,15%)] py-2 rounded-lg text-lg hover:bg-[hsl(172,67%,45%)] hover:text-[hsl(183,100%,15%)]"
+                >
+                  25%
+                </button>
+
+                <button
+                  class="text-white bg-[hsl(183,100%,15%)] py-2 rounded-lg text-lg hover:bg-[hsl(172,67%,45%)] hover:text-[hsl(183,100%,15%)]"
+                >
+                  50%
+                </button>
+
+                <input
+                id="Custom"
+                  type="number"
+                  placeholder="Custom"
+                  class="py-2 text-center text-base bg-[hsl(189,41%,97%)] rounded-lg outline outline-[hsl(172,67%,45%)]"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- people-sec -->
+          <div class="flex flex-col gap-2">
+            <label class="text-[hsl(183,100%,15%)] text-sm"
+              >Number of People</label
+            >
+            <div class="relative">
+              <input
+              placeholder="0"
+              id="people"
+                type="number"
+                class="w-full text-right px-2 py-2 border-none text-xl text-[hsl(183,100%,15%)] bg-[hsl(189,41%,97%)] outline outline-[hsl(172,67%,45%)] rounded"
+              />
+              <img
+                src="images/icon-person.svg"
+                class="absolute top-1/2 left-[5%] -translate-x-1/2 -translate-y-1/2"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- outputs-section -->
+        <div
+          class="w-full md:w-1/2 flex flex-col gap-8 bg-[hsl(183,100%,15%)] rounded-2xl p-8"
+        >
+          <!-- tip-amount -->
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-white">Tip Amount</p>
+              <span class="text-xs text-[hsl(184,14%,56%)]">/ person</span>
+            </div>
+            <h2 id="tipAmount" class="text-[hsl(172,67%,45%)] text-4xl">$0.00</h2>
+          </div>
+
+          <!-- total -->
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-white">Total</p>
+              <span class="text-xs text-[hsl(184,14%,56%)]">/ person</span>
+            </div>
+            <h2 id="total" class="text-[hsl(172,67%,45%)] text-4xl">$0.00</h2>
+          </div>
+
+          <!-- reset button -->
+          <button
+          id="resetBtn"
+            class="mt-auto py-2 uppercase bg-[hsl(172,67%,45%)] border-none rounded cursor-pointer text-[hsl(183,100%,15%)] opacity-40 hover:opacity-100"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

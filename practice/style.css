@@ -1,0 +1,16 @@
+#container {
+  height: 1500px;
+  width: 100%;
+  background: black;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+#hero {
+  height: 500px;
+  width: 100%;
+  background: blue;
+  max-width: 1400px;
+}
