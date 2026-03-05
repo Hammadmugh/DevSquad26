@@ -71,7 +71,7 @@
 
     <!-- Nav -->
     <nav class="bg-white">
-      <div class="max-w-full px-4 sm:px-8 lg:px-12 py-3">
+      <div class="container-custom px-4 sm:px-8 py-3">
         <div class="flex justify-between items-center">
           <!-- Logo -->
           <div class="flex-shrink-0">
@@ -132,22 +132,21 @@
     </nav>
 
     <!-- Hero Section -->
-    <section
-      class="relative mx-0 sm:mx-6 lg:mx-[100px] rounded-none sm:rounded-lg"
-      style="
-        background-image: url(assets/header-bg-image.png);
-        background-size: cover;
-        background-position: center;
-        min-height: 260px;
-      "
-    >
-      <div class="absolute inset-0 bg-[#03081FE5] overflow-hidden rounded-none sm:rounded-lg"></div>
-
+    <section class="relative">
+      <div class="container-custom">
       <div
-        class="relative max-w-full px-5 sm:px-8 lg:px-12 py-8 sm:py-12 flex items-center justify-between h-full"
+        class="relative md:mx-[100px] sm:px-8 py-8 sm:py-12 flex items-center justify-between rounded-none sm:rounded-lg"
+        style="
+          background-image: url(assets/header-bg-image.png);
+          background-size: cover;
+          background-position: center;
+          min-height: 260px;
+          background-color: #03081F;
+        "
       >
+        <div class="absolute inset-0 bg-[#03081FE5] rounded-none sm:rounded-lg"></div>
         <!-- Left Content -->
-        <div class="flex flex-col justify-between h-60 sm:h-80 z-10 w-full sm:w-auto">
+        <div class="flex flex-col justify-between h-60 sm:h-80 z-10 w-full sm:w-auto relative">
           <div class="max-w-xl">
             <p class="text-white text-xs sm:text-sm font-light mb-2 sm:mb-3">I'm lovin' it!</p>
             <h1 class="text-white text-2xl sm:text-4xl font-bold mb-4 sm:mb-8">
@@ -173,7 +172,7 @@
 
           <!-- Bottom Badge -->
           <div
-            class="absolute -bottom-6 left-0 bg-orange-500 px-4 sm:px-6 py-2 sm:py-3 rounded-lg w-fit flex items-center gap-2 shadow-lg z-20"
+            class="absolute -bottom-6 left-0 md:-bottom-17 md:-left-8 bg-orange-500 px-4 sm:px-6 py-2 sm:py-3 rounded-lg w-fit flex items-center gap-2 shadow-lg z-20"
           >
             <img src="assets/Clock.png" alt="Open" class="w-4 h-4 sm:w-5 sm:h-5" />
             <span class="text-white font-semibold text-xs sm:text-sm">Open until 2:00 am</span>
@@ -198,11 +197,12 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- Offers Section -->
-    <section class="px-4 sm:px-8 lg:px-[162px] py-8 mt-10">
-      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+    <section class="py-8 mt-10">
+      <div class="container-custom px-4 sm:px-8 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
         <div>
           <h2 class="text-lg sm:text-2xl font-bold text-gray-900">
             All Offers from McDonald's East London
@@ -226,8 +226,8 @@
     </section>
 
     <!-- Category Menu Bar -->
-    <section class="bg-orange-500 w-full py-3 sm:py-4 px-0 sm:px-4 lg:px-[95px] overflow-x-auto">
-      <div class="px-4 sm:px-12 flex items-center gap-4 sm:gap-0 sm:justify-between min-w-max sm:min-w-0">
+    <section class="container-custom bg-orange-500 w-full py-3 sm:py-4 overflow-x-auto">
+      <div class=" px-4 sm:px-8 flex items-center gap-4 sm:gap-0 sm:justify-between min-w-max sm:min-w-0">
         <button
           class="bg-gray-900 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-bold text-sm sm:text-[21px] whitespace-nowrap hover:bg-gray-800 transition"
         >
@@ -247,7 +247,8 @@
     </section>
 
     <!-- Burgers Section -->
-    <section class="px-4 sm:px-8 lg:px-[100px] py-8 sm:py-12 bg-gray-50">
+    <section class="py-8 sm:py-12 bg-gray-50">
+      <div class="container-custom px-4 sm:px-8">
       <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Burgers</h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -377,10 +378,12 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- Fries Section -->
-    <section class="px-4 sm:px-8 lg:px-[100px] py-8 sm:py-12 bg-gray-50">
+    <section class="py-8 sm:py-12 bg-gray-50">
+      <div class="container-custom px-4 sm:px-8">
       <h2 class="text-2xl sm:text-3xl font-bold text-[#FC8A06] mb-6 sm:mb-8">Fries</h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -504,10 +507,12 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- Cold Drinks Section -->
-    <section class="px-4 sm:px-8 lg:px-[100px] py-8 sm:py-12 bg-gray-50">
+    <section class="py-8 sm:py-12 bg-gray-50">
+      <div class="container-custom px-4 sm:px-8">
       <h2 class="text-2xl sm:text-3xl font-bold text-[#FC8A06] mb-6 sm:mb-8">Cold Drinks</h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -631,10 +636,12 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- Information Section -->
-    <section class="px-4 sm:px-8 lg:px-[100px] py-8 sm:py-12 bg-white">
+    <section class="py-8 sm:py-12 bg-white">
+      <div class="container-custom px-4 sm:px-8">
       <div class="rounded-2xl overflow-hidden shadow-lg">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
           <!-- Delivery Information -->
@@ -695,10 +702,12 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- Know More About Us Section -->
-    <section class="px-4 sm:px-8 lg:px-[100px] py-10 sm:py-16 bg-gray-100">
+    <section class="container-custom py-10 sm:py-16 bg-gray-100">
+      <div class=" px-4 sm:px-8">
       <!-- Header with Title and Tabs -->
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 sm:mb-12">
         <h2 class="text-3xl sm:text-5xl font-bold text-gray-900">Know more about us!</h2>
@@ -768,7 +777,7 @@
     <!-- Customer Reviews Section -->
     <section class="w-full bg-white">
       <!-- Header -->
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-[#D9D9D9] px-4 sm:px-8 lg:px-[100px] py-8 sm:py-10 gap-4">
+      <div class="container-custom px-4 sm:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between bg-[#D9D9D9] py-8 sm:py-10 gap-4">
         <h2 class="text-3xl sm:text-5xl font-bold text-gray-900">Customer Reviews</h2>
         <div class="flex gap-4">
           <button class="bg-orange-500 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center hover:bg-orange-600 transition">
@@ -781,7 +790,7 @@
       </div>
 
       <!-- Review Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 bg-[#D9D9D9] px-4 sm:px-8 lg:px-[100px] py-10 sm:py-16">
+      <div class="container-custom px-4 sm:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 bg-[#D9D9D9] py-10 sm:py-16">
         <!-- Review Card 1 -->
         <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-md hover:shadow-lg transition">
           <div class="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
@@ -871,13 +880,15 @@
       </div>
 
       <!-- Overall Rating Summary -->
-      <div class="flex justify-center items-center px-4 sm:px-8 lg:px-[100px] py-10 sm:py-12" style="background: linear-gradient(to bottom, #D9D9D9 0%, #D9D9D9 50%, white 50%, white 100%);">
+      <div class="flex justify-center items-center py-10 sm:py-12">
         <img src="assets/rating.png" alt="rating" class="max-w-full" />
+      </div>
       </div>
     </section>
 
     <!-- Similar Restaurants Section -->
-    <section class="px-4 sm:px-8 lg:px-[100px] py-10 sm:py-16 bg-white">
+    <section class="py-10 sm:py-16 bg-white">
+      <div class="container-custom px-4 sm:px-8">
       <h2 class="text-2xl sm:text-4xl font-bold text-gray-900 mb-6 sm:mb-10">Similar Restaurants</h2>
 
       <div class="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6">
@@ -930,13 +941,14 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- Footer Section -->
-    <footer class="w-full bg-gray-200">
+    <footer class="w-full bg-gray-200\">
       <!-- Top Footer -->
-      <div class="px-4 sm:px-8 lg:px-[100px] py-10 sm:py-16">
-        <div class="flex flex-col sm:flex-row flex-wrap gap-8 sm:gap-12 lg:gap-20">
+      <div class="container-custom px-4 sm:px-8 py-10 sm:py-16">
+        <div class="flex flex-col sm:flex-row sm:gap-12 lg:gap-20">
           <!-- Column 1: Logo and App Links -->
           <div>
             <img src="assets/LOGO 2.png" alt="Logo" />
@@ -954,8 +966,8 @@
           <!-- Column 2: Email Subscription -->
           <div>
             <h4 class="text-gray-900 font-bold text-base sm:text-lg mb-4 sm:mb-6">Get Exclusive Deals in your Inbox</h4>
-            <div class="flex gap-2 sm:gap-3 mb-3 sm:mb-4">
-              <input type="email" placeholder="youremail@gmail.com" class="flex-1 bg-gray-400 bg-opacity-40 rounded-full px-4 sm:px-5 py-2 sm:py-3 text-gray-700 placeholder-gray-600 focus:outline-none text-sm" />
+            <div class="flex mb-3 md:mb-4">
+              <input type="email" placeholder="youremail@gmail.com" class="flex-1 bg-[#D9D9D9] bg-opacity-40 rounded-full px-4 sm:px-5 py-2 sm:py-3 text-gray-700 placeholder-gray-600 focus:outline-none text-sm" />
               <button class="bg-orange-500 text-white font-bold px-4 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-orange-600 transition whitespace-nowrap text-sm">Subscribe</button>
             </div>
             <p class="text-gray-700 text-xs mb-4 sm:mb-6">we wont spam, read our <a href="#" class="underline hover:text-gray-900">email policy</a></p>
@@ -1000,7 +1012,7 @@
       </div>
 
       <!-- Bottom Footer -->
-      <div class="bg-gray-900 px-4 sm:px-8 lg:px-[100px] py-4 sm:py-6">
+      <div class="bg-gray-900 container-custom px-4 sm:px-8 py-4 sm:py-6">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
           <p class="text-gray-400 text-xs sm:text-sm">Order.uk Copyright 2025, All Rights Reserved.</p>
           <div class="flex flex-wrap items-center gap-4 sm:gap-8">
