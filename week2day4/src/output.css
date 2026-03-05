@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
@@ -21,8 +22,6 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
-    --text-6xl: 3.75rem;
-    --text-6xl--line-height: 1;
     --radius-lg: 0.5rem;
     --radius-2xl: 1rem;
     --default-font-family: var(--font-sans);
@@ -208,6 +207,9 @@
   .flex {
     display: flex;
   }
+  .grid {
+    display: grid;
+  }
   .hidden {
     display: none;
   }
@@ -231,6 +233,9 @@
   }
   .min-w-0 {
     min-width: calc(var(--spacing) * 0);
+  }
+  .flex-1 {
+    flex: 1;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -257,6 +262,9 @@
   .resize {
     resize: both;
   }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -271,6 +279,9 @@
   }
   .justify-center {
     justify-content: center;
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
   }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
@@ -362,9 +373,6 @@
   .break-words {
     overflow-wrap: break-word;
   }
-  .wrap-break-word {
-    overflow-wrap: break-word;
-  }
   .text-\[hsl\(172\,67\%\,45\%\)\] {
     color: hsl(172,67%,45%);
   }
@@ -373,6 +381,9 @@
   }
   .text-\[hsl\(184\,14\%\,56\%\)\] {
     color: hsl(184,14%,56%);
+  }
+  .text-red-500 {
+    color: var(--color-red-500);
   }
   .text-white {
     color: var(--color-white);
@@ -392,6 +403,9 @@
   }
   .outline-\[hsl\(172\,67\%\,45\%\)\] {
     outline-color: hsl(172,67%,45%);
+  }
+  .outline-red-500 {
+    outline-color: var(--color-red-500);
   }
   .blur {
     --tw-blur: blur(8px);
