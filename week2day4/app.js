@@ -130,4 +130,8 @@ function resetEverything() {
   customTipPercentage.forEach((input) => {
     input.value = "";
   });
+  buttons.forEach((b) => {
+      b.classList.remove("bg-[hsl(172,67%,45%)]");
+      b.classList.add("bg-[hsl(183,100%,15%)]", "text-white");
+    });
 }
