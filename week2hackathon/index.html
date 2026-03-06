@@ -46,18 +46,37 @@
             >
           </div>
 
+          <!-- Hamburger Menu Button (Mobile Only) -->
+          <button id="hamburgerBtn" class="md:hidden flex flex-col gap-1.5 w-6 h-6 bg-none border-none cursor-pointer">
+            <div class="w-6 h-0.5 bg-[#121417] rounded"></div>
+            <div class="w-6 h-0.5 bg-[#121417] rounded"></div>
+            <div class="w-6 h-0.5 bg-[#121417] rounded"></div>
+          </button>
+
           <!-- Search Icon -->
-          <button class="flex flex-row justify-center items-center px-2 md:px-2.5 gap-2 w-10 h-10 bg-[#F0F2F5] rounded-lg hover:bg-gray-300 transition">
+          <button class="hidden md:flex flex-row justify-center items-center px-2 md:px-2.5 gap-2 w-10 h-10 bg-[#F0F2F5] rounded-lg hover:bg-gray-300 transition">
             <img src="assets/bell-icon.png" alt="bell">
           </button>
 
           <!-- Profile Avatar -->
-           <div class="w-10 h-10 rounded-full overflow-hidden">
+           <div id="profileImageBtn" class="w-10 h-10 rounded-full overflow-hidden cursor-pointer hover:opacity-80 transition">
 
                <img src="assets/profile-img.png" alt="profile">
            </div>
         </nav>
       </header>
+
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobileMenu" class="hidden md:!hidden fixed top-16 left-0 right-0 bg-white border-b border-[#E6E8EB] z-50">
+        <nav class="flex flex-col items-start px-4 py-4 gap-3">
+          <button id="homeNavBtnMobile" class="w-full text-left text-base font-medium text-[#121417] hover:bg-[#F0F2F5] px-4 py-2 rounded bg-none border-none cursor-pointer">Home</button>
+          <button id="quizzesNavBtnMobile" class="w-full text-left text-base font-medium text-[#121417] hover:bg-[#F0F2F5] px-4 py-2 rounded bg-none border-none cursor-pointer">Quizzes</button>
+          <button id="resultsNavBtnMobile" class="w-full text-left text-base font-medium text-[#121417] hover:bg-[#F0F2F5] px-4 py-2 rounded bg-none border-none cursor-pointer">Results</button>
+          <button id="profileNavBtnMobile" class="w-full text-left text-base font-medium text-[#121417] hover:bg-[#F0F2F5] px-4 py-2 rounded bg-none border-none cursor-pointer">Profile</button>
+          <button id="logoutBtnMobile" class="w-full text-left text-base font-medium text-[#121417] hover:bg-[#F0F2F5] px-4 py-2 rounded bg-none border-none cursor-pointer">Logout</button>
+          <a href="#" class="w-full text-left text-base font-medium text-[#121417] hover:bg-[#F0F2F5] px-4 py-2 rounded block">Leaderboard</a>
+        </nav>
+      </div>
 
       <!-- Main Content -->
       <main class="flex flex-row justify-center items-start px-4 md:px-20 py-5 md:py-5 w-full flex-1">
@@ -440,7 +459,7 @@
         <!-- Profile Page -->
         <div id="profileContent" class="hidden flex flex-col items-start w-full max-w-[960px] gap-0">
           <!-- Back Button -->
-          <button id="profileBackBtn" class="absolute top-4 left-4 text-[#121417] hover:opacity-70 transition text-2xl">
+          <button id="profileBackBtn" class="absolute top-4 left-4 text-[#121417] hover:opacity-70 transition text-xl">
             ←
           </button>
 

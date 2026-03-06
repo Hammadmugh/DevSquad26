@@ -24,6 +24,16 @@
       const signupContent = document.getElementById('signupContent');
       const signinContent = document.getElementById('signinContent');
 
+      // Mobile Menu Elements
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const homeNavBtnMobile = document.getElementById('homeNavBtnMobile');
+      const quizzesNavBtnMobile = document.getElementById('quizzesNavBtnMobile');
+      const resultsNavBtnMobile = document.getElementById('resultsNavBtnMobile');
+      const profileNavBtnMobile = document.getElementById('profileNavBtnMobile');
+      const logoutBtnMobile = document.getElementById('logoutBtnMobile');
+      const profileImageBtn = document.getElementById('profileImageBtn');
+
       const signupForm = document.getElementById('signupForm');
       const signinForm = document.getElementById('signinForm');
       const signInLinkBtn = document.getElementById('signInLinkBtn');
@@ -83,6 +93,15 @@
         signinForm.reset();
       }
 
+      // Mobile Menu Toggle Function
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle('hidden');
+      }
+
+      function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+      }
+
       // Event listeners for navigation
       getStartedBtn.addEventListener('click', () => {
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -103,6 +122,49 @@
       signUpLinkBtn.addEventListener('click', (e) => {
         e.preventDefault();
         showSignup();
+      });
+
+      // Hamburger Menu Event Listeners
+      hamburgerBtn.addEventListener('click', toggleMobileMenu);
+
+      homeNavBtnMobile.addEventListener('click', () => {
+        closeMobileMenu();
+        showHome();
+      });
+
+      quizzesNavBtnMobile.addEventListener('click', () => {
+        closeMobileMenu();
+        showQuizzes();
+      });
+
+      resultsNavBtnMobile.addEventListener('click', () => {
+        closeMobileMenu();
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (currentUser) {
+          displayLastQuizResult(currentUser);
+        } else {
+          showHome();
+        }
+      });
+
+      profileNavBtnMobile.addEventListener('click', () => {
+        closeMobileMenu();
+        showProfile();
+      });
+
+      logoutBtnMobile.addEventListener('click', () => {
+        closeMobileMenu();
+        logoutUser();
+      });
+
+      // Profile Image Click (Open Profile)
+      profileImageBtn.addEventListener('click', () => {
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (currentUser) {
+          showProfile();
+        } else {
+          showHome();
+        }
       });
 
       // Signup form submission
