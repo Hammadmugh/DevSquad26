@@ -105,7 +105,7 @@
                 </div>
 
                 <!-- CTA Button -->
-                <button id="getStartedBtn" class="absolute bottom-8 md:bottom-12 px-5 md:px-10 py-3 md:py-3 bg-[#0D78F2] hover:bg-blue-600 text-white font-bold text-sm md:text-base rounded-lg transition transform hover:scale-105 active:scale-95">
+                <button id="getStartedBtn" class="absolute bottom-5 md:bottom-12 px-5 md:px-10 py-3 md:py-3 bg-[#0D78F2] hover:bg-blue-600 text-white font-bold text-sm md:text-base rounded-lg transition transform hover:scale-105 active:scale-95">
                   Get Started
                 </button>
               </div>
@@ -550,12 +550,12 @@
             <h2 class="text-2xl md:text-4xl font-bold text-[#121417]">Select a Quiz</h2>
             
             <!-- Filter Buttons -->
-            <div class="flex flex-row flex-wrap gap-3 w-full">
-              <button class="px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition">All</button>
-              <button class="px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition">Science</button>
-              <button class="px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition">History</button>
-              <button class="px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition">Literature</button>
-              <button class="px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition">Mathematics</button>
+            <div class="flex flex-row flex-wrap gap-3 w-full" id="filterButtonsContainer">
+              <button class="filterBtn px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition" data-category="all">All</button>
+              <button class="filterBtn px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition" data-category="Science">Science</button>
+              <button class="filterBtn px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition" data-category="History">History</button>
+              <button class="filterBtn px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition" data-category="Literature">Literature</button>
+              <button class="filterBtn px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition" data-category="Mathematics">Mathematics</button>
             </div>
           </div>
 
@@ -601,7 +601,7 @@
             <!-- Quiz Items -->
             <div class="flex flex-col gap-4 w-full">
               <!-- Quiz Item 1 -->
-              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer" data-quiz-id="general-knowledge">
+              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer quizItem" data-quiz-id="general-knowledge" data-category="General Knowledge">
                 <div class="w-full md:w-64 h-40 flex-shrink-0">
                   <img src="assets/general-knowledge.png" alt="general" class="w-full h-full object-cover">
                 </div>
@@ -614,7 +614,7 @@
               </div>
 
               <!-- Quiz Item 2 -->
-              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer" data-quiz-id="science">
+              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer quizItem" data-quiz-id="science" data-category="Science">
                 <div class="w-full md:w-64 h-40 flex-shrink-0">
                   <img src="assets/science.png" alt="sci" class="w-full h-full object-cover">
                 </div>
@@ -627,7 +627,7 @@
               </div>
 
               <!-- Quiz Item 3 -->
-              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer" data-quiz-id="history">
+              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer quizItem" data-quiz-id="history" data-category="History">
                 <div class="w-full md:w-64 h-40 flex-shrink-0">
                   <img src="assets/history.png" alt="history" class="w-full h-full object-cover">
                 </div>
@@ -640,7 +640,7 @@
               </div>
 
               <!-- Quiz Item 4 -->
-              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer" data-quiz-id="literature">
+              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer quizItem" data-quiz-id="literature" data-category="Literature">
                 <div class="w-full md:w-64 h-40 flex-shrink-0">
                   <img src="assets/literature.png" alt="literature" class="w-full h-full object-cover">
                 </div>
@@ -653,7 +653,7 @@
               </div>
 
               <!-- Quiz Item 5 -->
-              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer" data-quiz-id="mathematics">
+              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer quizItem" data-quiz-id="mathematics" data-category="Mathematics">
                 <div class="w-full md:w-64 h-40 flex-shrink-0">
                     <img src="assets/mathematics.png" alt="math" class="w-full h-full object-cover">
                 </div>

@@ -468,6 +468,59 @@
             startQuiz(quizId);
           });
         });
+
+        // Initialize filter buttons
+        initializeFilterButtons();
+      }
+
+      // Function to initialize filter button clicks
+      function initializeFilterButtons() {
+        const filterButtons = document.querySelectorAll('.filterBtn');
+        
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the selected category
+            const selectedCategory = this.getAttribute('data-category');
+            
+            // Update active button styling
+            filterButtons.forEach(btn => {
+              if (btn.getAttribute('data-category') === selectedCategory) {
+                btn.classList.add('bg-[#0D78F2]', 'text-white');
+                btn.classList.remove('bg-[#F0F2F5]', 'text-[#121417]', 'hover:bg-gray-300');
+              } else {
+                btn.classList.remove('bg-[#0D78F2]', 'text-white');
+                btn.classList.add('bg-[#F0F2F5]', 'text-[#121417]', 'hover:bg-gray-300');
+              }
+            });
+            
+            // Filter the quiz items
+            filterQuizzes(selectedCategory);
+          });
+        });
+
+        // Set "All" as default active button
+        const allButton = document.querySelector('[data-category="all"]');
+        if (allButton) {
+          allButton.classList.add('bg-[#0D78F2]', 'text-white');
+          allButton.classList.remove('bg-[#F0F2F5]', 'text-[#121417]', 'hover:bg-gray-300');
+        }
+      }
+
+      // Function to filter quizzes based on category
+      function filterQuizzes(category) {
+        const quizItems = document.querySelectorAll('.quizItem');
+        
+        quizItems.forEach(item => {
+          const itemCategory = item.getAttribute('data-category');
+          
+          if (category === 'all' || itemCategory === category) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
       }
 
       // Function to start a quiz
