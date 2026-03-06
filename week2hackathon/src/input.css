@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-manrope: 'Manrope', sans-serif;
+  --color-primary: #0D78F2;
+  --color-dark: #121417;
+  --color-light: #FFFFFF;
+  --color-border: #E6E8EB;
+  --color-text-muted: #61738A;
+  --color-bg-secondary: #F0F2F5;
+  --max-width-7-5xl: 1400px;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    font-family: 'Manrope', 'system-ui', 'sans-serif';
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-5 py-3 bg-[#0D78F2] hover:bg-blue-600 text-white font-bold rounded-lg transition transform hover:scale-105 active:scale-95;
+  }
+
+  .card {
+    @apply p-4 bg-white border border-[#DBE0E6] rounded-lg hover:shadow-lg transition;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-extrabold text-[#121417] leading-tight tracking-tighter;
+  }
+
+  .nav-link {
+    @apply text-xs md:text-sm font-medium text-[#121417] hover:opacity-80 transition;
+  }
+}

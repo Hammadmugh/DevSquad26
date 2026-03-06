@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizMaster - Ultimate Quiz App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="bg-white">
+    <!-- Main Container -->
+    <div class="flex flex-col min-h-screen w-full max-w-7.5xl mx-auto bg-white">
+      <!-- Header/Navbar -->
+      <header class="flex flex-row justify-between items-center px-4 md:px-10 py-3 md:py-3 border-b border-[#E6E8EB] w-full">
+        <!-- Logo Section -->
+        <div class="flex flex-row items-center gap-4">
+          <!-- Icon -->
+          <img src="assets/logo.png" alt="logo">
+          <!-- Brand Name -->
+          <h1 class="text-sm md:text-lg font-bold text-[#121417]">
+            QuizMaster
+          </h1>
+        </div>
+
+        <!-- Navigation & Actions -->
+        <nav class="flex flex-row justify-end items-center gap-4 md:gap-8 flex-1">
+          <!-- Nav Links -->
+          <div class="hidden md:flex flex-row items-center gap-6 md:gap-9">
+            <button id="homeNavBtn" class="text-xs md:text-sm font-medium text-[#121417] hover:opacity-80 bg-none border-none cursor-pointer"
+              >Home</button
+            >
+            <button id="quizzesNavBtn" class="text-xs md:text-sm font-medium text-[#121417] hover:opacity-80 bg-none border-none cursor-pointer"
+              >Quizzes</button
+            >
+            <button id="resultsNavBtn" class="text-xs md:text-sm font-medium text-[#121417] hover:opacity-80 bg-none border-none cursor-pointer"
+              >Results</button
+            >
+            <button id="profileNavBtn" class="text-xs md:text-sm font-medium text-[#121417] hover:opacity-80 bg-none border-none cursor-pointer"
+              >Profile</button
+            >
+            <button id="logoutBtn" class="text-xs md:text-sm font-medium text-[#121417] hover:opacity-80 bg-none border-none cursor-pointer"
+              >Logout</button
+            >
+            <a href="#" class="text-xs md:text-sm font-medium text-[#121417] hover:opacity-80"
+              >Leaderboard</a
+            >
+          </div>
+
+          <!-- Search Icon -->
+          <button class="flex flex-row justify-center items-center px-2 md:px-2.5 gap-2 w-10 h-10 bg-[#F0F2F5] rounded-lg hover:bg-gray-300 transition">
+            <img src="assets/bell-icon.png" alt="bell">
+          </button>
+
+          <!-- Profile Avatar -->
+           <div class="w-10 h-10 rounded-full overflow-hidden">
+
+               <img src="assets/profile-img.png" alt="profile">
+           </div>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <main class="flex flex-row justify-center items-start px-4 md:px-20 py-5 md:py-5 w-full flex-1">
+        <!-- Hero & Features Container -->
+        <div id="homeContent" class="flex flex-col items-start w-full max-w-[960px]">
+          <!-- Hero Section -->
+          <section class="flex flex-col items-start w-full mb-20 md:mb-10">
+            <div class="flex flex-col items-start p-4 w-full rounded-lg overflow-hidden">
+              <!-- Hero Background Image -->
+              <div
+                class="relative w-full h-64 md:h-96 bg-cover bg-center rounded-lg flex flex-col items-center justify-center"
+                style="background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url('assets/desktop.png')"
+              >
+                <!-- Hero Content -->
+                <div class="flex flex-col items-center gap-2 text-center px-4">
+                  <!-- Title -->
+                  <h2 class="text-3xl md:text-5xl font-extrabold text-white leading-tight tracking-tighter max-w-4xl">
+                    Welcome to QuizMaster
+                  </h2>
+                  <!-- Description -->
+                  <p class="text-sm md:text-base font-normal text-white leading-relaxed max-w-3xl">
+                    Test your knowledge with our engaging quizzes. Compete with
+                    friends and climb the leaderboard. Start your quiz journey
+                    today!
+                  </p>
+                </div>
+
+                <!-- CTA Button -->
+                <button id="getStartedBtn" class="absolute bottom-8 md:bottom-12 px-5 md:px-10 py-3 md:py-3 bg-[#0D78F2] hover:bg-blue-600 text-white font-bold text-sm md:text-base rounded-lg transition transform hover:scale-105 active:scale-95">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Features Section -->
+          <section class="flex flex-col items-start w-full gap-10 md:gap-10">
+            <!-- Section Header -->
+            <div class="flex flex-col items-start gap-4 w-full">
+              <h3 class="text-3xl md:text-4xl font-extrabold text-[#121417] leading-tight tracking-tighter">
+                Key Features
+              </h3>
+              <p class="text-sm md:text-base font-normal text-[#121417]">
+                Explore the exciting features that make QuizMaster the ultimate
+                quiz app.
+              </p>
+            </div>
+
+            <!-- Feature Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
+              <!-- Feature Card 1 -->
+              <div class="flex flex-col items-start p-4 gap-3 bg-white border border-[#DBE0E6] rounded-lg hover:shadow-lg transition">
+                <!-- Icon -->
+                <img src="assets/clock.png" alt="clock">
+                <!-- Content -->
+                <div class="flex flex-col items-start gap-1">
+                  <h4 class="text-base font-bold text-[#121417]">
+                    Timed Quizzes
+                  </h4>
+                  <p class="text-xs md:text-sm font-normal text-[#61738A] leading-relaxed">
+                    Challenge yourself with timed quizzes to test your speed and
+                    accuracy.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Feature Card 2 -->
+              <div class="flex flex-col items-start p-4 gap-3 bg-white border border-[#DBE0E6] rounded-lg hover:shadow-lg transition">
+                <!-- Icon -->
+                <img src="assets/prize.png" alt="prize">
+                <!-- Content -->
+                <div class="flex flex-col items-start gap-1">
+                  <h4 class="text-base font-bold text-[#121417]">
+                    Leaderboard
+                  </h4>
+                  <p class="text-xs md:text-sm font-normal text-[#61738A] leading-relaxed">
+                    Compete with friends and other users to see who can achieve
+                    the highest scores.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Feature Card 3 -->
+              <div class="flex flex-col items-start p-4 gap-3 bg-white border border-[#DBE0E6] rounded-lg hover:shadow-lg transition">
+                <!-- Icon -->
+                <img src="assets/progress.png" alt="progress">
+                <!-- Content -->
+                <div class="flex flex-col items-start gap-1">
+                  <h4 class="text-base font-bold text-[#121417]">
+                    Progress Tracking
+                  </h4>
+                  <p class="text-xs md:text-sm font-normal text-[#61738A] leading-relaxed">
+                    Track your progress and see how you improve over time with
+                    detailed performance reports.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Signup Form Container -->
+        <div id="signupContent" class="hidden flex flex-col items-center w-full max-w-[960px] py-5 md:py-5">
+          <!-- Form Title -->
+          <div class="flex flex-col items-center w-full mb-3 md:mb-1.5">
+            <button id="backBtn" class="absolute top-4 left-4 text-[#121417] hover:opacity-70 transition text-2xl">
+              ←
+            </button>
+            <h2 class="text-2xl md:text-3xl font-bold text-[#121417] text-center">
+              Create your account
+            </h2>
+          </div>
+
+          <!-- Signup Form -->
+          <form id="signupForm" class="flex flex-col items-center w-full gap-5 md:gap-5">
+            <!-- Full Name Input -->
+            <div class="w-full md:w-[480px]">
+              <input
+                id="signupFullName"
+                type="text"
+                placeholder="Full Name"
+                class="w-full px-3.75 py-3 md:py-3.75 bg-white border border-[#DBE0E6] rounded-lg text-base text-[#121417] placeholder-[#61738A] focus:outline-none focus:border-[#0D78F2] focus:ring-1 focus:ring-[#0D78F2] transition"
+                required
+              />
+            </div>
+
+            <!-- Email Input -->
+            <div class="w-full md:w-[480px]">
+              <input
+                id="signupEmail"
+                type="email"
+                placeholder="Email"
+                class="w-full px-3.75 py-3 md:py-3.75 bg-white border border-[#DBE0E6] rounded-lg text-base text-[#121417] placeholder-[#61738A] focus:outline-none focus:border-[#0D78F2] focus:ring-1 focus:ring-[#0D78F2] transition"
+                required
+              />
+            </div>
+
+            <!-- Password Input -->
+            <div class="w-full md:w-[480px]">
+              <input
+                id="signupPassword"
+                type="password"
+                placeholder="Password"
+                class="w-full px-3.75 py-3 md:py-3.75 bg-white border border-[#DBE0E6] rounded-lg text-base text-[#121417] placeholder-[#61738A] focus:outline-none focus:border-[#0D78F2] focus:ring-1 focus:ring-[#0D78F2] transition"
+                required
+              />
+            </div>
+
+            <!-- Confirm Password Input -->
+            <div class="w-full md:w-[480px]">
+              <input
+                id="signupConfirmPassword"
+                type="password"
+                placeholder="Confirm Password"
+                class="w-full px-3.75 py-3 md:py-3.75 bg-white border border-[#DBE0E6] rounded-lg text-base text-[#121417] placeholder-[#61738A] focus:outline-none focus:border-[#0D78F2] focus:ring-1 focus:ring-[#0D78F2] transition"
+                required
+              />
+            </div>
+
+            <!-- Error Message -->
+            <div id="signupError" class="w-full md:w-[480px] text-red-500 text-sm hidden"></div>
+
+            <!-- Success Message -->
+            <div id="signupSuccess" class="w-full md:w-[480px] text-green-600 text-sm hidden"></div>
+
+            <!-- Sign Up Button -->
+            <button
+              type="submit"
+              class="w-full md:w-[480px] px-4 py-2.5 bg-[#0D78F2] hover:bg-blue-600 text-white font-bold text-sm md:text-base rounded-lg transition transform hover:scale-105 active:scale-95 mt-1 md:mt-0"
+            >
+              Sign Up
+            </button>
+          </form>
+
+          <!-- Sign In Link -->
+          <div class="flex items-center justify-center w-full mt-1 md:mt-0.75">
+            <p class="text-xs md:text-sm text-[#61738A] text-center">
+              Already have an account?
+              <button id="signInLinkBtn" class="text-[#0D78F2] font-medium hover:underline bg-none border-none cursor-pointer">Sign In</button>
+            </p>
+          </div>
+        </div>
+
+        <!-- Sign In Form Container -->
+        <div id="signinContent" class="hidden flex flex-col items-center w-full max-w-[960px] py-5 md:py-5">
+          <!-- Form Title -->
+          <div class="flex flex-col items-center w-full mb-3 md:mb-1.5">
+            <button id="backBtn2" class="absolute top-4 left-4 text-[#121417] hover:opacity-70 transition text-2xl">
+              ←
+            </button>
+            <h2 class="text-2xl md:text-3xl font-bold text-[#121417] text-center">
+              Welcome back
+            </h2>
+          </div>
+
+          <!-- Sign In Form -->
+          <form id="signinForm" class="flex flex-col items-center w-full gap-5 md:gap-5">
+            <!-- Email Input -->
+            <div class="w-full md:w-[480px]">
+              <input
+                id="signinEmail"
+                type="email"
+                placeholder="Email"
+                class="w-full px-3.75 py-3 md:py-3.75 bg-white border border-[#DBE0E6] rounded-lg text-base text-[#121417] placeholder-[#61738A] focus:outline-none focus:border-[#0D78F2] focus:ring-1 focus:ring-[#0D78F2] transition"
+                required
+              />
+            </div>
+
+            <!-- Password Input -->
+            <div class="w-full md:w-[480px]">
+              <input
+                id="signinPassword"
+                type="password"
+                placeholder="Password"
+                class="w-full px-3.75 py-3 md:py-3.75 bg-white border border-[#DBE0E6] rounded-lg text-base text-[#121417] placeholder-[#61738A] focus:outline-none focus:border-[#0D78F2] focus:ring-1 focus:ring-[#0D78F2] transition"
+                required
+              />
+            </div>
+
+            <!-- Error Message -->
+            <div id="signinError" class="w-full md:w-[480px] text-red-500 text-sm hidden"></div>
+
+            <!-- Success Message -->
+            <div id="signinSuccess" class="w-full md:w-[480px] text-green-600 text-sm hidden"></div>
+
+            <!-- Sign In Button -->
+            <button
+              type="submit"
+              class="w-full md:w-[480px] px-4 py-2.5 bg-[#0D78F2] hover:bg-blue-600 text-white font-bold text-sm md:text-base rounded-lg transition transform hover:scale-105 active:scale-95 mt-1 md:mt-0"
+            >
+              Sign In
+            </button>
+          </form>
+
+          <!-- Sign Up Link -->
+          <div class="flex items-center justify-center w-full mt-1 md:mt-0.75">
+            <p class="text-xs md:text-sm text-[#61738A] text-center">
+              Don't have an account?
+              <button id="signUpLinkBtn" class="text-[#0D78F2] font-medium hover:underline bg-none border-none cursor-pointer">Sign Up</button>
+            </p>
+          </div>
+        </div>
+
+        <!-- Review Incorrect Answers Page -->
+        <div id="reviewAnswersContent" class="hidden flex flex-col items-start w-full max-w-[960px] gap-0">
+          <!-- Title -->
+          <div class="flex flex-col items-start w-full px-4 py-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-[#121417]">Review Incorrect Answers</h1>
+          </div>
+
+          <!-- Incorrect Answers Container -->
+          <div id="incorrectAnswersContainer" class="flex flex-col gap-6 w-full px-4 py-4">
+            <!-- Incorrect answers will be populated here dynamically -->
+          </div>
+
+          <!-- Back to Quizzes Button -->
+          <div class="flex flex-row justify-end items-center w-full px-4 py-6">
+            <button id="backToQuizzesFromReviewBtn" class="px-6 py-3 bg-[#0D78F2] text-white font-bold text-sm rounded-lg hover:bg-blue-600 transition">
+              Back to Quizzes
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Results Page -->
+        <div id="quizResultsContent" class="hidden flex flex-col items-start w-full max-w-[960px] gap-0">
+          <!-- Title -->
+          <div class="flex flex-col items-center w-full px-4 py-5">
+            <h1 class="text-3xl md:text-4xl font-bold text-[#121417] text-center">Quiz Results</h1>
+          </div>
+
+          <!-- Progress Section -->
+          <div class="flex flex-col items-start gap-3 w-full px-4 py-4">
+            <!-- Status -->
+            <div class="flex flex-row justify-between items-center w-full">
+              <p class="text-base font-medium text-[#121417]">Quiz Completed</p>
+              <p class="text-base font-medium text-[#121417]">100%</p>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="w-full bg-[#DBE0E6] rounded-lg h-2 overflow-hidden">
+              <div class="h-full bg-[#121417] rounded-lg w-full"></div>
+            </div>
+          </div>
+
+          <!-- Score Card -->
+          <div class="flex flex-col gap-2 w-full px-4 py-4 bg-[#F0F2F5] rounded-lg mx-4 mb-4">
+            <p class="text-base font-medium text-[#121417]">Score</p>
+            <p id="scoreDisplay" class="text-3xl font-bold text-[#121417]">8/10</p>
+          </div>
+
+          <!-- Congratulations Message -->
+          <div class="flex flex-col items-center w-full px-4 py-4">
+            <p id="congratsMessage" class="text-center text-base font-normal text-[#121417] leading-relaxed">
+              Congratulations, Sarah! You've completed the quiz with a score of 8 out of 10. Your performance indicates a strong understanding of the subject matter. Keep up the excellent work!
+            </p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col gap-4 items-center w-full px-4 py-4">
+            <!-- Review Answers Button -->
+            <button id="reviewAnswersBtn" class="px-6 py-3 bg-[#0D78F2] text-white font-bold text-sm rounded-lg hover:bg-blue-600 transition">
+              Review Answers
+            </button>
+
+            <!-- Take Another Quiz Button -->
+            <button id="anotherQuizBtn" class="px-8 py-3 bg-[#F0F2F5] text-[#121417] font-bold text-sm rounded-lg hover:bg-gray-300 transition">
+              Take Another Quiz
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Questions Page -->
+        <div id="quizQuestionsContent" class="hidden flex flex-col items-start w-full max-w-[960px] gap-0">
+          <!-- Back Button -->
+          <button id="quizBackBtn" class="absolute top-4 left-4 text-[#121417] hover:opacity-70 transition text-2xl">
+            ←
+          </button>
+
+          <!-- Progress Section -->
+          <div class="flex flex-col items-start gap-3 w-full px-4 py-4">
+            <h3 class="text-base font-medium text-[#121417]">Progress</h3>
+            
+            <!-- Progress Bar -->
+            <div class="w-full bg-[#DBE0E6] rounded-lg h-2 overflow-hidden">
+              <div id="progressFill" class="h-full bg-[#121417] rounded-lg transition-all duration-300" style="width: 25%;"></div>
+            </div>
+            
+            <!-- Question Counter -->
+            <p id="questionCounter" class="text-sm text-[#61738A]">Question 1 of 10</p>
+          </div>
+
+          <!-- Timer Section -->
+          <div class="flex flex-row gap-6 items-center w-full px-4 py-6 border-b border-[#E6E8EB]">
+            <!-- Hours -->
+            <div class="flex flex-col items-center gap-2">
+              <div class="w-24 h-16 bg-[#F0F2F5] rounded-lg flex items-center justify-center">
+                <span id="hoursDisplay" class="text-2xl font-bold text-[#121417]">00</span>
+              </div>
+              <p class="text-sm text-[#61738A]">Hours</p>
+            </div>
+
+            <!-- Minutes -->
+            <div class="flex flex-col items-center gap-2">
+              <div class="w-24 h-16 bg-[#F0F2F5] rounded-lg flex items-center justify-center">
+                <span id="minutesDisplay" class="text-2xl font-bold text-[#121417]">00</span>
+              </div>
+              <p class="text-sm text-[#61738A]">Minutes</p>
+            </div>
+
+            <!-- Seconds -->
+            <div class="flex flex-col items-center gap-2">
+              <div class="w-24 h-16 bg-[#F0F2F5] rounded-lg flex items-center justify-center">
+                <span id="secondsDisplay" class="text-2xl font-bold text-[#121417]">30</span>
+              </div>
+              <p class="text-sm text-[#61738A]">Seconds</p>
+            </div>
+          </div>
+
+          <!-- Question Text -->
+          <div class="w-full px-4 py-5">
+            <h2 id="questionText" class="text-3xl md:text-4xl font-bold text-[#121417]">What is the capital of France?</h2>
+          </div>
+
+          <!-- Options -->
+          <div id="optionsContainer" class="flex flex-col gap-3 w-full px-4 py-4">
+            <!-- Options will be dynamically generated -->
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="flex flex-row justify-between items-center w-full px-4 py-6 gap-4">
+            <button id="prevBtn" class="px-6 py-3 bg-[#F0F2F5] text-[#121417] font-bold text-sm rounded-lg hover:bg-gray-300 transition disabled:opacity-50 disabled:cursor-not-allowed">
+              Previous
+            </button>
+            <button id="nextBtn" class="px-6 py-3 bg-[#0D78F2] text-white font-bold text-sm rounded-lg hover:bg-blue-600 transition disabled:opacity-50 disabled:cursor-not-allowed">
+              Next
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile Page -->
+        <div id="profileContent" class="hidden flex flex-col items-start w-full max-w-[960px] gap-0">
+          <!-- Back Button -->
+          <button id="profileBackBtn" class="absolute top-4 left-4 text-[#121417] hover:opacity-70 transition text-2xl">
+            ←
+          </button>
+
+          <!-- Profile Header -->
+          <div class="flex flex-col items-center w-full px-4 py-8 gap-6">
+            <!-- Avatar -->
+            <div id="profileAvatar" class="w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full border-4 border-[#0D78F2] flex items-center justify-center text-white text-4xl font-bold flex-shrink-0">S</div>
+            
+            <!-- User Info -->
+            <div class="flex flex-col items-center gap-2">
+              <h1 id="profileName" class="text-3xl md:text-4xl font-bold text-[#121417]">Sophia Bennett</h1>
+              <p id="profileTitle" class="text-base font-normal text-[#61738A]">Quiz Enthusiast</p>
+              <p id="profileJoined" class="text-base font-normal text-[#61738A]">Joined 2021</p>
+            </div>
+          </div>
+
+          <!-- Tabs Section -->
+          <div class="w-full px-4 py-0 border-b border-[#DBE0E6]">
+            <div class="flex flex-row gap-8 items-start">
+              <button id="activityTab" class="px-0 py-4 text-base font-bold text-[#61738A] border-b-4 border-[#E6E8EB] hover:border-[#0D78F2] transition cursor-pointer">
+                Activity
+              </button>
+              <button id="profileTab" class="px-0 py-4 text-base font-bold text-[#121417] border-b-4 border-[#121417] cursor-pointer">
+                Profile
+              </button>
+            </div>
+          </div>
+
+          <!-- Personal Information Section -->
+          <div class="w-full px-4 py-6">
+            <h2 class="text-2xl font-bold text-[#121417] mb-6">Personal Information</h2>
+            
+            <!-- Name and Email -->
+            <div class="flex flex-col md:flex-row gap-6 w-full">
+              <!-- Name Field -->
+              <div class="flex flex-col gap-3 flex-1 pb-6 border-t border-[#E6E8EB]">
+                <label class="text-sm font-normal text-[#61738A]">Name</label>
+                <p id="profileNameDisplay" class="text-base font-normal text-[#121417]">Sophia Bennett</p>
+              </div>
+              
+              <!-- Email Field -->
+              <div class="flex flex-col gap-3 flex-1 pb-6 border-t border-[#E6E8EB]">
+                <label class="text-sm font-normal text-[#61738A]">Email</label>
+                <p id="profileEmailDisplay" class="text-base font-normal text-[#121417]">sophia.bennett@email.com</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio Section -->
+          <div class="w-full px-4 py-4">
+            <!-- Bio Field -->
+            <div class="flex flex-col gap-3 flex-1 pb-6 border-t border-[#E6E8EB]">
+              <label class="text-sm font-normal text-[#61738A]">Bio</label>
+              <p id="profileBioDisplay" class="text-base font-normal text-[#121417] line-clamp-3">Avid quiz taker and trivia lover. Always up for a challenge!</p>
+            </div>
+          </div>
+
+          <!-- Quiz History Section -->
+          <div class="w-full px-4 py-6">
+            <h2 class="text-2xl font-bold text-[#121417] mb-4">Quiz History</h2>
+            
+            <!-- Quiz History Table -->
+            <div class="w-full border border-[#DBE0E6] rounded-lg overflow-hidden">
+              <!-- Table Header -->
+              <div class="flex flex-row w-full bg-white border-b border-[#E6E8EB]">
+                <div class="flex-1 px-4 py-3 text-sm font-bold text-[#121417]">Quiz Name</div>
+                <div class="flex-1 px-4 py-3 text-sm font-bold text-[#121417]">Score</div>
+                <div class="flex-1 px-4 py-3 text-sm font-bold text-[#121417]">Date</div>
+              </div>
+              
+              <!-- Table Body -->
+              <div id="quizHistoryContainer" class="flex flex-col divide-y divide-[#E6E8EB]">
+                <!-- Quiz history rows will be populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quizzes Page -->
+        <div id="quizzesContent" class="hidden flex flex-col items-start w-full max-w-[960px] gap-0">
+          <!-- Back Button -->
+          <button id="quizzesBackBtn" class="absolute top-4 left-4 text-[#121417] hover:opacity-70 transition text-2xl">
+            ←
+          </button>
+
+          <!-- Filter Section -->
+          <div class="flex flex-col items-start gap-4 w-full px-4 py-4">
+            <h2 class="text-2xl md:text-4xl font-bold text-[#121417]">Select a Quiz</h2>
+            
+            <!-- Filter Buttons -->
+            <div class="flex flex-row flex-wrap gap-3 w-full">
+              <button class="px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition">All</button>
+              <button class="px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition">Science</button>
+              <button class="px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition">History</button>
+              <button class="px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition">Literature</button>
+              <button class="px-4 py-2 bg-[#F0F2F5] text-[#121417] font-medium text-sm rounded-lg hover:bg-gray-300 transition">Mathematics</button>
+            </div>
+          </div>
+
+          <!-- Featured Quizzes Section -->
+          <div class="w-full px-4 py-3">
+            <h3 class="text-xl md:text-2xl font-bold text-[#121417] mb-4">Featured Quizzes</h3>
+            
+            <!-- Featured Cards -->
+            <div class="flex flex-col md:flex-row gap-3 overflow-x-auto pb-4">
+              <!-- Card 1 -->
+              <div class="flex flex-col gap-4 min-w-[250px] md:min-w-[250px] rounded-lg overflow-hidden hover:shadow-lg transition cursor-pointer" data-quiz-id="science">
+                <img src="assets/universe.png" alt="universe" class="w-full h-40 object-cover">
+                <div class="flex flex-col gap-2">
+                  <h4 class="text-base font-medium text-[#121417]">The Universe</h4>
+                  <p class="text-xs text-[#61738A]">Test your knowledge about the cosmos.</p>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="flex flex-col gap-4 min-w-[250px] md:min-w-[250px] rounded-lg overflow-hidden hover:shadow-lg transition cursor-pointer" data-quiz-id="history">
+                <img src="assets/history.png" alt="history" class="w-full h-40 object-cover">
+                <div class="flex flex-col gap-2">
+                  <h4 class="text-base font-medium text-[#121417]">Ancient Civilizations</h4>
+                  <p class="text-xs text-[#61738A]">Explore the mysteries of ancient cultures.</p>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="flex flex-col gap-4 min-w-[250px] md:min-w-[250px] rounded-lg overflow-hidden hover:shadow-lg transition cursor-pointer" data-quiz-id="literature">
+                <img src="assets/shakespear.png" alt="shakespear" class="w-full h-40 object-cover">
+                <div class="flex flex-col gap-2">
+                  <h4 class="text-base font-medium text-[#121417]">Shakespearean Plays</h4>
+                  <p class="text-xs text-[#61738A]">Dive into the world of the Bard.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- All Quizzes Section -->
+          <div class="w-full px-4 py-3">
+            <h3 class="text-xl md:text-2xl font-bold text-[#121417] mb-4">All Quizzes</h3>
+            
+            <!-- Quiz Items -->
+            <div class="flex flex-col gap-4 w-full">
+              <!-- Quiz Item 1 -->
+              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer" data-quiz-id="general-knowledge">
+                <div class="w-full md:w-64 h-40 flex-shrink-0">
+                  <img src="assets/general-knowledge.png" alt="general" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col justify-between flex-1">
+                  <div>
+                    <h4 class="text-lg font-bold text-[#121417] mb-2">General Knowledge</h4>
+                    <p class="text-sm text-[#61738A]">Test your overall knowledge with a mix of questions.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quiz Item 2 -->
+              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer" data-quiz-id="science">
+                <div class="w-full md:w-64 h-40 flex-shrink-0">
+                  <img src="assets/science.png" alt="sci" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col justify-between flex-1">
+                  <div>
+                    <h4 class="text-lg font-bold text-[#121417] mb-2">Science</h4>
+                    <p class="text-sm text-[#61738A]">Explore the wonders of science from biology to physics.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quiz Item 3 -->
+              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer" data-quiz-id="history">
+                <div class="w-full md:w-64 h-40 flex-shrink-0">
+                  <img src="assets/history.png" alt="history" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col justify-between flex-1">
+                  <div>
+                    <h4 class="text-lg font-bold text-[#121417] mb-2">History</h4>
+                    <p class="text-sm text-[#61738A]">Journey through time and learn about historical events.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quiz Item 4 -->
+              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer" data-quiz-id="literature">
+                <div class="w-full md:w-64 h-40 flex-shrink-0">
+                  <img src="assets/literature.png" alt="literature" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col justify-between flex-1">
+                  <div>
+                    <h4 class="text-lg font-bold text-[#121417] mb-2">Literature</h4>
+                    <p class="text-sm text-[#61738A]">Discover the world of books and authors.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quiz Item 5 -->
+              <div class="flex flex-col md:flex-row gap-4 p-4 border border-[#DBE0E6] rounded-lg hover:shadow-lg transition cursor-pointer" data-quiz-id="mathematics">
+                <div class="w-full md:w-64 h-40 flex-shrink-0">
+                    <img src="assets/mathematics.png" alt="math" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col justify-between flex-1">
+                  <div>
+                    <h4 class="text-lg font-bold text-[#121417] mb-2">Mathematics</h4>
+                    <p class="text-sm text-[#61738A]">Challenge your math skills with various problems.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

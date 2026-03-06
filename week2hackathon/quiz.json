@@ -1,0 +1,394 @@
+{
+  "quizzes": {
+    "general-knowledge": {
+      "id": "general-knowledge",
+      "title": "General Knowledge",
+      "description": "Test your overall knowledge with a mix of questions.",
+      "category": "General Knowledge",
+      "questions": [
+        {
+          "id": 1,
+          "question": "What is the capital of France?",
+          "options": ["London", "Paris", "Berlin", "Rome"],
+          "correct": 1,
+          "explanation": "Paris is the capital and largest city of France."
+        },
+        {
+          "id": 2,
+          "question": "Who painted the Mona Lisa?",
+          "options": ["Vincent van Gogh", "Leonardo da Vinci", "Michelangelo", "Raphael"],
+          "correct": 1,
+          "explanation": "Leonardo da Vinci painted the Mona Lisa during the Renaissance."
+        },
+        {
+          "id": 3,
+          "question": "What is the largest planet in our solar system?",
+          "options": ["Saturn", "Neptune", "Jupiter", "Mars"],
+          "correct": 2,
+          "explanation": "Jupiter is the largest planet in our solar system."
+        },
+        {
+          "id": 4,
+          "question": "In which year did World War II end?",
+          "options": ["1943", "1944", "1945", "1946"],
+          "correct": 2,
+          "explanation": "World War II ended in 1945 with Germany's surrender in May and Japan's surrender in August."
+        },
+        {
+          "id": 5,
+          "question": "What is the smallest country in the world?",
+          "options": ["Monaco", "San Marino", "Vatican City", "Liechtenstein"],
+          "correct": 2,
+          "explanation": "Vatican City is the smallest country in the world, with an area of 0.17 square miles."
+        },
+        {
+          "id": 6,
+          "question": "What is the most spoken language in the world?",
+          "options": ["English", "Spanish", "Mandarin Chinese", "Hindi"],
+          "correct": 2,
+          "explanation": "Mandarin Chinese is the most spoken language in the world by number of native speakers."
+        },
+        {
+          "id": 7,
+          "question": "Who is the author of 'Harry Potter'?",
+          "options": ["J.K. Rowling", "George R.R. Martin", "Stephen King", "J.R.R. Tolkien"],
+          "correct": 0,
+          "explanation": "J.K. Rowling is the author of the Harry Potter book series."
+        },
+        {
+          "id": 8,
+          "question": "What is the currency of Japan?",
+          "options": ["Yuan", "Won", "Yen", "Ringgit"],
+          "correct": 2,
+          "explanation": "The Yen is the official currency of Japan."
+        },
+        {
+          "id": 9,
+          "question": "How many continents are there?",
+          "options": ["5", "6", "7", "8"],
+          "correct": 2,
+          "explanation": "There are 7 continents: Asia, Africa, North America, South America, Antarctica, Europe, and Oceania."
+        },
+        {
+          "id": 10,
+          "question": "What is the tallest mountain in the world?",
+          "options": ["K2", "Mount Everest", "Kangchenjunga", "Lhhotse"],
+          "correct": 1,
+          "explanation": "Mount Everest is the tallest mountain in the world with a height of 29,032 feet (8,849 meters)."
+        }
+      ]
+    },
+    "science": {
+      "id": "science",
+      "title": "Science",
+      "description": "Explore the wonders of science from biology to physics.",
+      "category": "Science",
+      "questions": [
+        {
+          "id": 1,
+          "question": "What is the chemical symbol for gold?",
+          "options": ["Go", "Gd", "Au", "Ag"],
+          "correct": 2,
+          "explanation": "Au is the chemical symbol for gold, derived from its Latin name 'aurum'."
+        },
+        {
+          "id": 2,
+          "question": "How many bones are in the human body?",
+          "options": ["186", "206", "226", "246"],
+          "correct": 1,
+          "explanation": "An adult human body has 206 bones. Babies are born with around 270 bones, but many fuse together as they grow."
+        },
+        {
+          "id": 3,
+          "question": "What is the process by which plants make their own food?",
+          "options": ["Respiration", "Photosynthesis", "Fermentation", "Decomposition"],
+          "correct": 1,
+          "explanation": "Photosynthesis is the process where plants use sunlight to convert carbon dioxide and water into glucose and oxygen."
+        },
+        {
+          "id": 4,
+          "question": "What is the speed of light?",
+          "options": ["300,000 km/s", "150,000 km/s", "450,000 km/s", "100,000 km/s"],
+          "correct": 0,
+          "explanation": "The speed of light is approximately 300,000 kilometers per second (299,792 km/s to be precise)."
+        },
+        {
+          "id": 5,
+          "question": "What is the study of rocks called?",
+          "options": ["Biology", "Botany", "Geology", "Archaeology"],
+          "correct": 2,
+          "explanation": "Geology is the science that studies the Earth, including rocks, minerals, and natural processes."
+        },
+        {
+          "id": 6,
+          "question": "What percentage of the Earth's atmosphere is oxygen?",
+          "options": ["21%", "31%", "11%", "41%"],
+          "correct": 0,
+          "explanation": "Approximately 21% of Earth's atmosphere is oxygen, while nitrogen makes up about 78%."
+        },
+        {
+          "id": 7,
+          "question": "What is the powerhouse of the cell?",
+          "options": ["Nucleus", "Ribosome", "Mitochondria", "Golgi apparatus"],
+          "correct": 2,
+          "explanation": "The mitochondria is known as the powerhouse of the cell because it produces energy in the form of ATP."
+        },
+        {
+          "id": 8,
+          "question": "How many chambers does the human heart have?",
+          "options": ["2", "3", "4", "5"],
+          "correct": 2,
+          "explanation": "The human heart has 4 chambers: two atria and two ventricles."
+        },
+        {
+          "id": 9,
+          "question": "What is the most abundant element in the universe?",
+          "options": ["Oxygen", "Carbon", "Helium", "Hydrogen"],
+          "correct": 3,
+          "explanation": "Hydrogen is the most abundant element in the universe, making up about 75% of all baryonic mass."
+        },
+        {
+          "id": 10,
+          "question": "What type of animal is a dolphin?",
+          "options": ["Fish", "Amphibian", "Mammal", "Reptile"],
+          "correct": 2,
+          "explanation": "A dolphin is a mammal, despite living in water. Mammals have hair, warm blood, and nurse their young with milk."
+        }
+      ]
+    },
+    "history": {
+      "id": "history",
+      "title": "History",
+      "description": "Journey through time and learn about historical events.",
+      "category": "History",
+      "questions": [
+        {
+          "id": 1,
+          "question": "In which year did the Titanic sink?",
+          "options": ["1910", "1912", "1914", "1916"],
+          "correct": 1,
+          "explanation": "The RMS Titanic sank on April 15, 1912, after hitting an iceberg in the North Atlantic Ocean."
+        },
+        {
+          "id": 2,
+          "question": "Who was the first President of the United States?",
+          "options": ["Thomas Jefferson", "George Washington", "John Adams", "James Madison"],
+          "correct": 1,
+          "explanation": "George Washington was the first President of the United States, serving from 1789 to 1797."
+        },
+        {
+          "id": 3,
+          "question": "What ancient wonder of the world still stands today?",
+          "options": ["Hanging Gardens of Babylon", "Great Pyramid of Giza", "Colossus of Rhodes", "Lighthouse of Alexandria"],
+          "correct": 1,
+          "explanation": "The Great Pyramid of Giza is the only surviving wonder of the ancient world."
+        },
+        {
+          "id": 4,
+          "question": "In which year did Christopher Columbus reach the Americas?",
+          "options": ["1490", "1492", "1494", "1500"],
+          "correct": 1,
+          "explanation": "Christopher Columbus reached the Americas on October 12, 1492, initiating sustained European exploration of the America."
+        },
+        {
+          "id": 5,
+          "question": "Who was the first Emperor of Rome?",
+          "options": ["Julius Caesar", "Augustus", "Nero", "Tiberius"],
+          "correct": 1,
+          "explanation": "Augustus (Octavian) was the first Emperor of Rome, ruling from 27 BC to 14 AD."
+        },
+        {
+          "id": 6,
+          "question": "In which year did the Berlin Wall fall?",
+          "options": ["1987", "1988", "1989", "1990"],
+          "correct": 2,
+          "explanation": "The Berlin Wall fell on November 9, 1989, symbolizing the end of the Cold War and leading to German reunification."
+        },
+        {
+          "id": 7,
+          "question": "Who wrote the American Declaration of Independence?",
+          "options": ["Benjamin Franklin", "Thomas Jefferson", "Thomas Paine", "John Adams"],
+          "correct": 1,
+          "explanation": "Thomas Jefferson was the primary author of the Declaration of Independence, adopted on July 4, 1776."
+        },
+        {
+          "id": 8,
+          "question": "In which century did the Renaissance occur?",
+          "options": ["12th-13th", "13th-14th", "14th-17th", "16th-17th"],
+          "correct": 2,
+          "explanation": "The Renaissance occurred primarily from the 14th to the 17th centuries, beginning in Italy and spreading across Europe."
+        },
+        {
+          "id": 9,
+          "question": "Who was the leader of Nazi Germany during World War II?",
+          "options": ["Benito Mussolini", "Adolf Hitler", "Hermann Göring", "Joseph Goebbels"],
+          "correct": 1,
+          "explanation": "Adolf Hitler was the Führer (leader) of Nazi Germany from 1933 until his death in 1945."
+        },
+        {
+          "id": 10,
+          "question": "In which year did the French Revolution begin?",
+          "options": ["1787", "1788", "1789", "1790"],
+          "correct": 2,
+          "explanation": "The French Revolution began in 1789, marked by the storming of the Bastille on July 14, 1789."
+        }
+      ]
+    },
+    "literature": {
+      "id": "literature",
+      "title": "Literature",
+      "description": "Discover the world of books and authors.",
+      "category": "Literature",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Who wrote 'Pride and Prejudice'?",
+          "options": ["Charlotte Brontë", "Jane Austen", "Emily Dickinson", "George Eliot"],
+          "correct": 1,
+          "explanation": "Jane Austen wrote 'Pride and Prejudice', published in 1813, one of the most famous novels in English literature."
+        },
+        {
+          "id": 2,
+          "question": "What is the real name of the author George Orwell?",
+          "options": ["George Bernard Shaw", "Eric Arthur Blair", "Samuel Clemens", "Charles Dickens"],
+          "correct": 1,
+          "explanation": "George Orwell's real name was Eric Arthur Blair. He adopted the pen name 'George Orwell' for his writing."
+        },
+        {
+          "id": 3,
+          "question": "Who wrote 'The Great Gatsby'?",
+          "options": ["Ernest Hemingway", "F. Scott Fitzgerald", "William Faulkner", "John Steinbeck"],
+          "correct": 1,
+          "explanation": "F. Scott Fitzgerald wrote 'The Great Gatsby', published in 1925, a masterpiece of American literature."
+        },
+        {
+          "id": 4,
+          "question": "Which Shakespeare play features the character Hamlet?",
+          "options": ["Macbeth", "Othello", "Hamlet", "King Lear"],
+          "correct": 2,
+          "explanation": "Hamlet is the protagonist and title character of Shakespeare's tragedy 'Hamlet, Prince of Denmark'."
+        },
+        {
+          "id": 5,
+          "question": "Who wrote 'One Hundred Years of Solitude'?",
+          "options": ["Paulo Coelho", "Gabriel García Márquez", "Julio Cortázar", "Jorge Luis Borges"],
+          "correct": 1,
+          "explanation": "Gabriel García Márquez wrote 'One Hundred Years of Solitude', a seminal work of magical realism published in 1967."
+        },
+        {
+          "id": 6,
+          "question": "What is the first book in the 'A Song of Ice and Fire' series?",
+          "options": ["A Clash of Kings", "A Game of Thrones", "A Storm of Swords", "A Feast for Crows"],
+          "correct": 1,
+          "explanation": "'A Game of Thrones' is the first book in George R.R. Martin's 'A Song of Ice and Fire' series."
+        },
+        {
+          "id": 7,
+          "question": "Who wrote 'Jane Eyre'?",
+          "options": ["Jane Austen", "Charlotte Brontë", "Emily Brontë", "Anne Brontë"],
+          "correct": 1,
+          "explanation": "Charlotte Brontë wrote 'Jane Eyre', published in 1847 under the pseudonym 'Currer Bell'."
+        },
+        {
+          "id": 8,
+          "question": "What is the genre of 'Moby Dick'?",
+          "options": ["Romance", "Adventure novel", "Science fiction", "Mystery"],
+          "correct": 1,
+          "explanation": "'Moby Dick' by Herman Melville is an adventure novel and epic tale of a whaling ship's quest."
+        },
+        {
+          "id": 9,
+          "question": "Who wrote 'To Kill a Mockingbird'?",
+          "options": ["Mark Twain", "Ernest Hemingway", "Harper Lee", "Truman Capote"],
+          "correct": 2,
+          "explanation": "Harper Lee wrote 'To Kill a Mockingbird', published in 1960, which won the Pulitzer Prize."
+        },
+        {
+          "id": 10,
+          "question": "What is the first book in the Harry Potter series?",
+          "options": ["Harry Potter and the Chamber of Secrets", "Harry Potter and the Philosopher's Stone", "Harry Potter and the Prisoner of Azkaban", "Harry Potter and the Goblet of Fire"],
+          "correct": 1,
+          "explanation": "'Harry Potter and the Philosopher's Stone' (or 'Sorcerer's Stone' in the US) is the first book by J.K. Rowling."
+        }
+      ]
+    },
+    "mathematics": {
+      "id": "mathematics",
+      "title": "Mathematics",
+      "description": "Challenge your math skills with various problems.",
+      "category": "Mathematics",
+      "questions": [
+        {
+          "id": 1,
+          "question": "What is the value of π (pi) approximately?",
+          "options": ["2.14", "3.14", "4.14", "5.14"],
+          "correct": 1,
+          "explanation": "The value of π (pi) is approximately 3.14159, often rounded to 3.14."
+        },
+        {
+          "id": 2,
+          "question": "What is the square root of 144?",
+          "options": ["10", "12", "14", "16"],
+          "correct": 1,
+          "explanation": "The square root of 144 is 12 because 12 × 12 = 144."
+        },
+        {
+          "id": 3,
+          "question": "What is the result of 15 × 12?",
+          "options": ["160", "170", "180", "190"],
+          "correct": 2,
+          "explanation": "15 × 12 = 180. (15 × 10 = 150, 15 × 2 = 30, 150 + 30 = 180)"
+        },
+        {
+          "id": 4,
+          "question": "What is the Fibonacci sequence's next number after 1, 1, 2, 3, 5, 8?",
+          "options": ["11", "12", "13", "14"],
+          "correct": 2,
+          "explanation": "The next number in the Fibonacci sequence is 13 (8 + 5 = 13). Each number is the sum of the two preceding ones."
+        },
+        {
+          "id": 5,
+          "question": "What is the area of a circle with radius 5?",
+          "options": ["78.5", "75.5", "80.5", "82.5"],
+          "correct": 0,
+          "explanation": "The area of a circle is πr². With r=5, area = π × 5² = 25π ≈ 78.5"
+        },
+        {
+          "id": 6,
+          "question": "What is 25% of 200?",
+          "options": ["40", "45", "50", "55"],
+          "correct": 2,
+          "explanation": "25% of 200 = 0.25 × 200 = 50"
+        },
+        {
+          "id": 7,
+          "question": "What is the sum of angles in a triangle?",
+          "options": ["180°", "270°", "360°", "450°"],
+          "correct": 0,
+          "explanation": "The sum of all angles in any triangle is always 180 degrees."
+        },
+        {
+          "id": 8,
+          "question": "What is the cube root of 27?",
+          "options": ["2", "3", "4", "5"],
+          "correct": 1,
+          "explanation": "The cube root of 27 is 3 because 3 × 3 × 3 = 27."
+        },
+        {
+          "id": 9,
+          "question": "What is 2⁶ (2 to the power of 6)?",
+          "options": ["32", "64", "128", "256"],
+          "correct": 1,
+          "explanation": "2⁶ = 2 × 2 × 2 × 2 × 2 × 2 = 64"
+        },
+        {
+          "id": 10,
+          "question": "What is the median of the numbers 3, 7, 9, 15, 20?",
+          "options": ["7", "9", "12", "15"],
+          "correct": 1,
+          "explanation": "The median is the middle value when numbers are arranged in order. In 3, 7, 9, 15, 20, the median is 9."
+        }
+      ]
+    }
+  }
+}
