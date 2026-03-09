@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="src/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100" style="font-family: 'Poppins', sans-serif;">
+    <!-- Navigation Bar -->
+    <nav class="max-w-[1400px] mx-auto bg-gray-900 text-gray-400">
+        <div class="pl-4 md:pl-6">
+            <div class="flex items-center justify-between h-[42px]">
+                
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="assets/logo.png" alt="Logo" class="w-6 h-7">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8 ml-12 flex-1">
+                    <div class="relative">
+                        <a href="#" class="text-xs font-medium text-gray-400 hover:text-white transition">STORE</a>
+                        <div class="absolute bottom-0 left-0 h-1 w-full bg-blue-500 rounded"></div>
+                    </div>
+                    <a href="#" class="text-xs font-medium text-gray-400 hover:text-white transition">HELP</a>
+                    <a href="#" class="text-xs font-medium text-gray-400 hover:text-white transition">FAQ</a>
+                    <a href="#" class="text-xs font-medium text-gray-400 hover:text-white transition">UNREAL ENGINE</a>
+                </div>
+                <div class="hidden md:flex items-center ml-8">
+                    <div class="w-6 h-6">
+                        <img src="assets/global.png" alt="global">
+                    </div>
+                </div>
+
+                <!-- Sign In & Download Buttons (Desktop) -->
+                <div class="hidden md:flex items-center space-x-4 ml-12">
+                    <a href="#" class="flex items-center space-x-1 text-xs font-medium text-gray-400 hover:text-white transition">
+                        <div class="w-5 h-5">
+                            <img src="assets/sign_in.png" alt="sign_in">
+                        </div>
+                        <span>SIGN IN</span>
+                    </a>
+                    <button class="px-6 py-[13px] bg-blue-500 text-white text-xs font-medium hover:bg-blue-600 transition">
+                        DOWNLOAD
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none">
+                    <svg class="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-950 border-t border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" class="block text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium">STORE</a>
+                <a href="#" class="block text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium">HELP</a>
+                <a href="#" class="block text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+                <a href="#" class="block text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium">UNREAL ENGINE</a>
+                <hr class="my-2 border-gray-700">
+                <a href="#" class="block text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
+                <button class="w-full mt-2 px-3 py-2 bg-blue-500 text-white text-sm font-medium rounded hover:bg-blue-600 transition">
+                    DOWNLOAD
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Sample) -->
+    <div class="max-w-[1400px] mx-auto bg-white">
+        <div class="mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h1 class="text-4xl font-bold text-gray-900">Welcome to the Navbar</h1>
+            <p class="mt-4 text-gray-600">This is a responsive navbar built with HTML, Tailwind CSS, and JavaScript</p>
+        </div>
+    </div>
+
+    <script src="src/app.js"></script>
+</body>
+</html>

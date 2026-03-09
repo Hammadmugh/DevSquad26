@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+@import "tailwindcss";
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .navbar-text {
+    @apply text-xs font-medium text-gray-400;
+  }
+
+  .navbar-link {
+    @apply hover:text-white transition-colors duration-200;
+  }
+}
