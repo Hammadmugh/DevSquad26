@@ -14,7 +14,7 @@ const options = {
       },
     ],
   },
-  apis: ["./routes/taskRoutes.js"], // where your API routes are
+  apis: ["./routes/taskRoutes"], // where your API routes are
 };
 
 const swaggerSpec = swaggerJsDoc(options);
