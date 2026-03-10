@@ -14,7 +14,11 @@ const options = {
     },
     servers: [
       {
-        url: "https://localhost:3001",
+        url: "https://dev-squad26-week3day2-backend.vercel.app",
+        description: "Production server",
+      },
+      {
+        url: "http://localhost:3000",
         description: "Development server",
       },
     ],
