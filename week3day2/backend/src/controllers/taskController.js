@@ -36,14 +36,19 @@ const updateTask = async (req, res, next) => {
   try {
     const { title, completed } = req.body;
 
-    if (!title || typeof completed !== "boolean") {
+    // Allow partial updates - at least one field must be provided
+    if (!title && typeof completed !== "boolean") {
       res.status(constants.VALIDATION_ERROR);
-      throw new Error("Task name and status is required for update");
+      throw new Error("At least title or status is required for update");
     }
+
+    const updateData = {};
+    if (title) updateData.title = title;
+    if (typeof completed === "boolean") updateData.completed = completed;
 
     const task = await TaskModel.findOneAndUpdate(
       { _id: req.params.id, user: req.user.id },
-      req.body,
+      updateData,
       { new: true }
     );
 
