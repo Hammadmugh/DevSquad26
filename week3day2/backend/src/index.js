@@ -22,8 +22,7 @@ app.use((req, res, next) => {
 });
 
 // Swagger Documentation
-app.use("/api-docs", swaggerUi.serve);
-app.get("/api-docs", swaggerUi.setup(swaggerSpec, { explorer: true }));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec, { explorer: true }));
 
 // Routes
 app.use("/api/auth", authRoutes);
