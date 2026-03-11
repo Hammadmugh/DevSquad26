@@ -26,13 +26,15 @@ app.use(
   "/api-docs",
   swaggerUi.serve,
   swaggerUi.setup(swaggerSpec, {
-    explorer: true,
-    customCss: ".swagger-ui { background-color: #fafafa; }",
-    customCdnUrl: "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3",
-    swaggerOptions: {
-      url: "https://dev-squad26-week3day2-backend.vercel.app/swagger-json",
-    },
-  })
+    customSiteTitle: "Task Manager API Docs",
+    swaggerOptions: { persistAuthorization: true },
+    customCssUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.3.0/swagger-ui.min.css",
+    customJs: [
+      "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.3.0/swagger-ui-bundle.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.3.0/swagger-ui-standalone-preset.js",
+    ],
+  }),
 );
 
 // Serve Swagger JSON
