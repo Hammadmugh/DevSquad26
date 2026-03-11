@@ -22,7 +22,24 @@ app.use((req, res, next) => {
 });
 
 // Swagger Documentation
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec, { explorer: true }));
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerSpec, {
+    explorer: true,
+    customCss: ".swagger-ui { background-color: #fafafa; }",
+    customCdnUrl: "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3",
+    swaggerOptions: {
+      url: "https://dev-squad26-week3day2-backend.vercel.app/swagger-json",
+    },
+  })
+);
+
+// Serve Swagger JSON
+app.get("/swagger-json", (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  res.send(swaggerSpec);
+});
 
 // Routes
 app.use("/api/auth", authRoutes);
