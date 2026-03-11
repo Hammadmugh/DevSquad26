@@ -1,24 +1,30 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const validator = require("validator");
 const User = require("../models/userModel");
 const { constants } = require("../middlewares/constants");
 
 const register = async (req, res, next) => {
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
     
-    if (!username || !password) {
+    if (!email || !password) {
       res.status(constants.VALIDATION_ERROR);
-      throw new Error("Username and password are required");
+      throw new Error("Email and password are required");
+    }
+    
+    if (!validator.isEmail(email)) {
+      res.status(constants.VALIDATION_ERROR);
+      throw new Error("Invalid email format");
     }
     
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({ username, password: hashedPassword });
+    const newUser = new User({ email, password: hashedPassword });
     await newUser.save();
     res.status(201).json({ 
       success: true, 
-      data: { username: newUser.username },
-      message: `User registered with username ${username}` 
+      data: { email: newUser.email },
+      message: `User registered with email ${email}` 
     });
   } catch (err) {
     next(err);
@@ -27,17 +33,22 @@ const register = async (req, res, next) => {
 
 const login = async (req, res, next) => {
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
     
-    if (!username || !password) {
+    if (!email || !password) {
       res.status(constants.VALIDATION_ERROR);
-      throw new Error("Username and password are required");
+      throw new Error("Email and password are required");
     }
     
-    const user = await User.findOne({ username });
+    if (!validator.isEmail(email)) {
+      res.status(constants.VALIDATION_ERROR);
+      throw new Error("Invalid email format");
+    }
+    
+    const user = await User.findOne({ email });
     if (!user) {
       res.status(constants.NOT_FOUND);
-      throw new Error(`${username} not found`);
+      throw new Error(`${email} not found`);
     }
     
     const isMatch = await bcrypt.compare(password, user.password);

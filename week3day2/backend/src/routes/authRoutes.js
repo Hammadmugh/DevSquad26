@@ -15,10 +15,10 @@ const { register, login } = require("../controllers/authController");
  *           schema:
  *             type: object
  *             required:
- *               - username
+ *               - email
  *               - password
  *             properties:
- *               username:
+ *               email:
  *                 type: string
  *               password:
  *                 type: string
@@ -26,7 +26,7 @@ const { register, login } = require("../controllers/authController");
  *             success:
  *               summary: Valid registration request
  *               value:
- *                 username: john_doe
+ *                 email: john_doe@example.com
  *                 password: password123
  *     responses:
  *       201:
@@ -39,8 +39,8 @@ const { register, login } = require("../controllers/authController");
  *                 value:
  *                   success: true
  *                   data:
- *                     username: john_doe
- *                   message: "User registered with username john_doe"
+ *                     email: john_doe@example.com
+ *                   message: "User registered with email john_doe@example.com"
  *       400:
  *         description: Validation error
  *         content:
@@ -51,7 +51,7 @@ const { register, login } = require("../controllers/authController");
  *                 value:
  *                   success: false
  *                   data: null
- *                   message: "Username and password are required"
+ *                   message: "Email and password are required"
  *       500:
  *         description: Server error
  *         content:
@@ -79,10 +79,10 @@ router.post("/register", register);
  *           schema:
  *             type: object
  *             required:
- *               - username
+ *               - email
  *               - password
  *             properties:
- *               username:
+ *               email:
  *                 type: string
  *               password:
  *                 type: string
@@ -90,7 +90,7 @@ router.post("/register", register);
  *             success:
  *               summary: Valid login request
  *               value:
- *                 username: john_doe
+ *                 email: john_doe@example.com
  *                 password: password123
  *     responses:
  *       200:
@@ -115,7 +115,7 @@ router.post("/register", register);
  *                 value:
  *                   success: false
  *                   data: null
- *                   message: "john_doe not found"
+ *                   message: "john_doe@example.com not found"
  *       400:
  *         description: Validation error or Invalid credentials
  *         content:
