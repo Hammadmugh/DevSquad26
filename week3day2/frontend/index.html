@@ -47,14 +47,14 @@
   </head>
   <body class="bg-black text-white">
     <!-- Main Container -->
-    <div class="max-w-[1400px] mx-auto min-h-screen flex flex-col">
+    <div class="max-w-[1400px] mx-auto flex flex-col">
       <!-- NAVBAR -->
       <nav class="w-full flex justify-between items-center px-10 py-8">
         <!-- Logo -->
-        <img id="logoIcon" src="./assets/logo.png" alt="logo" class="w-20" />
+        <img id="logoIcon" src="./assets/logo.png" alt="logo" class="w-20 mb-[40px]" />
 
         <!-- Menu -->
-        <div class=" gap-8 text-lg flex text-transparent md:text-white">
+        <div class=" gap-8 text-lg flex text-transparent md:text-white mb-[40px]">
           <a href="#">Home</a>
           <a href="#">Portfolio</a>
           <a href="#">Skills</a>
@@ -65,21 +65,21 @@
         <div class="flex items-center gap-5">
           <div
             id="themeToggle"
-            class="w-14 h-8 bg-[#FFEC70] rounded-full flex items-center gap-1 px-1 cursor-pointer theme-toggle"
+            class="w-14 h-8 bg-[#FFEC70] rounded-full flex items-center gap-1 px-1 cursor-pointer theme-toggle mb-[40px]"
           >
             <div id="toggleCircle" class="w-6 h-6 bg-[#FFFDED] rounded-full theme-toggle-circle"></div>
             <img id="toggleIcon" src="assets/moon-toggle.png" alt="moon" class="w-5" />
           </div>
 
           <!-- Hamburger Menu Button (Mobile Only) -->
-          <button id="hamburgerBtn" class="flex flex-col gap-1 cursor-pointer md:hidden">
+          <button id="hamburgerBtn" class="flex flex-col gap-1 cursor-pointer md:hidden mb-[40px]">
             <span class="w-6 h-0.5 bg-white block"></span>
             <span class="w-6 h-0.5 bg-white block"></span>
             <span class="w-6 h-0.5 bg-white block"></span>
           </button>
 
           <!-- Contact Button (MD and LG only) -->
-          <button class="bg-[#925FF0] px-6 py-2 rounded hidden md:block">Contact Me</button>
+          <button class="bg-[#925FF0] px-6 py-2 rounded hidden mb-[40px] md:block">Contact Me</button>
         </div>
 
         <!-- Mobile Menu -->
@@ -125,7 +125,7 @@
         </div>
 
         <!-- STAR SEPARATOR -->
-        <div class="absolute hidden lg:block left-[42%] top-[20%]">
+        <div class="absolute hidden lg:block left-[42%] top-[27%]">
           <img
             id="starIcon"
             src="./assets/star.png"

@@ -7,21 +7,14 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-yellow-300: oklch(90.5% 0.182 98.111);
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-300: oklch(87.2% 0.01 258.338);
-    --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --text-sm: 0.875rem;
-    --text-sm--line-height: calc(1.25 / 0.875);
-    --text-base: 1rem;
-    --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --radius-lg: 0.5rem;
-    --blur-sm: 8px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -189,6 +182,12 @@
   .top-\[20\%\] {
     top: 20%;
   }
+  .top-\[27\%\] {
+    top: 27%;
+  }
+  .top-\[30\%\] {
+    top: 30%;
+  }
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
@@ -206,6 +205,9 @@
   }
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
+  }
+  .mb-\[40px\] {
+    margin-bottom: 40px;
   }
   .block {
     display: block;
@@ -399,11 +401,20 @@
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
   }
+  .text-\[28px\] {
+    font-size: 28px;
+  }
   .text-\[40px\] {
     font-size: 40px;
   }
+  .text-\[64px\] {
+    font-size: 64px;
+  }
   .text-\[80px\] {
     font-size: 80px;
+  }
+  .text-\[110px\] {
+    font-size: 110px;
   }
   .text-\[140px\] {
     font-size: 140px;
@@ -443,14 +454,24 @@
       }
     }
   }
+  .md\:mb-\[40px\] {
+    @media (width >= 48rem) {
+      margin-bottom: 40px;
+    }
+  }
+  .md\:mb-\[50px\] {
+    @media (width >= 48rem) {
+      margin-bottom: 50px;
+    }
+  }
+  .md\:mb-\[60px\] {
+    @media (width >= 48rem) {
+      margin-bottom: 60px;
+    }
+  }
   .md\:block {
     @media (width >= 48rem) {
       display: block;
-    }
-  }
-  .md\:flex {
-    @media (width >= 48rem) {
-      display: flex;
     }
   }
   .md\:hidden {
@@ -461,6 +482,21 @@
   .md\:text-\[80px\] {
     @media (width >= 48rem) {
       font-size: 80px;
+    }
+  }
+  .md\:text-\[114px\] {
+    @media (width >= 48rem) {
+      font-size: 114px;
+    }
+  }
+  .md\:text-\[140px\] {
+    @media (width >= 48rem) {
+      font-size: 140px;
+    }
+  }
+  .md\:text-\[200px\] {
+    @media (width >= 48rem) {
+      font-size: 200px;
     }
   }
   .md\:text-white {
@@ -481,6 +517,11 @@
   .lg\:block {
     @media (width >= 64rem) {
       display: block;
+    }
+  }
+  .lg\:text-\[200px\] {
+    @media (width >= 64rem) {
+      font-size: 200px;
     }
   }
 }
